@@ -39,12 +39,12 @@ const CaraouselAlongAnimation = () => {
     <div className="flex flex-col w-full items-center justify-center px-6">
       {/* Title */}
      <div className=" max-w-[470px]">
-      <h2 className=" font-urbane-rounded text-[35px] font-bold transition-all duration-700">
+      <h2 className=" font-urbane-rounded md:text-[35px] text-[25px] font-bold transition-all duration-700">
         {slides[current].title}
       </h2>
 
       {/* Description */}
-      <p className="mt-4 h-[60px] text-lg text-gray-600 transition-all duration-700">
+      <p className="mt-4 h-[60px]  md:text-[17px]  text-[15px] text-gray-600 transition-all duration-700">
         {slides[current].description}
       </p>
 

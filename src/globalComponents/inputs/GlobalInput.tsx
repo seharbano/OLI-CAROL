@@ -1,11 +1,11 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 
 type Props = {
   id?: string;
   value?: string;
   type?: string;
-  title: string; // label text
+  title: string; 
   width?: string;
   height?: string;
   error?: string;
@@ -22,39 +22,32 @@ const GlobalInput = ({
   error,
   onChange,
 }: Props) => {
-  const [focused, setFocused] = useState(false);
+  const hasValue = value && value.length > 0;
 
   return (
     <div className="relative w-full" style={{ width }}>
-      {/* Input */}
       <input
         id={id}
         type={type}
         value={value}
         onChange={onChange}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
         style={{ height }}
-        className={`peer w-full px-4 pt-5 pb-2 border rounded-md outline-none transition-all
-          ${error ? "border-red-500" : "border-gray-400 focus:border-[#cf9f78]"}`}
+        className={`peer w-full px-4 pt-3 pb-3 rounded-[10px] outline-none transition-all
+          ${error ? "border-red-500" : "border-[#dedede] border focus:border-[1.5px] focus:border-[#cf9f78]"}`}
+        placeholder=" " 
       />
 
-      {/* Floating Label */}
       <label
         htmlFor={id}
-        className={`absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all pointer-events-none
-          peer-placeholder-shown:top-1/2 
-          peer-placeholder-shown:text-gray-400
-          peer-placeholder-shown:text-base
-          peer-focus:top-2
-          peer-focus:text-sm
-          peer-focus:text-[#cf9f78]
-          ${value ? "top-2 text-sm text-[#cf9f78]" : ""}`}
+        className={`absolute left-4 transition-all duration-200 ease-in-out pointer-events-none
+          ${hasValue
+            ? "top-[1px] text-[12px] text-[#cf9f78] translate-y-0"  
+            : "top-1/2 -translate-y-1/2 text-[15px] text-gray-400"} 
+        `}
       >
         {title}
       </label>
 
-      {/* Error */}
       {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
     </div>
   );

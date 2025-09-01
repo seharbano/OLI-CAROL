@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import StarsRating from '../starsRating/StarsRating';
 
 type props = {
     image: string | StaticImport;
@@ -12,7 +13,7 @@ type props = {
   
 const HeroSliderCard = ({ image, hoverImage, title, price }: props) => {
   return (
-    <div className="w-[280px] m-4 group">
+    <div className="w-[280px] m-4 group flex flex-col justify-center">
       <div className="relative w-[280px] h-[280px] overflow-hidden">
         <Image
           src={image}
@@ -35,11 +36,10 @@ const HeroSliderCard = ({ image, hoverImage, title, price }: props) => {
           add to cart
           </button>
         </div>
-      </div>
-
-      
-      <p className="mt-2 text-center">{title}</p>
-      <p className="text-center">€{price}</p>
+      </div>   
+      <p className="mt-2 text-center sm:text-[15px] text-[13px]">{title}</p>
+      <div className='mx-auto flex sm:text-[15px] text-[13px]'><StarsRating/>(6)</div>
+      <p className="text-center sm:text-[15px] text-[13px]">€{price}</p>
     </div>
   );
 };

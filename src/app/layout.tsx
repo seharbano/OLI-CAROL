@@ -1,10 +1,6 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
-
-import Navbar from "@/globalComponents/navbar/Navbar";
-import GoTopButton from "@/globalComponents/buttons/GoTopButton";
-
+import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "OLI&CAROL",
@@ -13,6 +9,7 @@ export const metadata: Metadata = {
     icon: "/duck.svg",
   },
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -20,16 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* <meta name="google-site-verification" content="gHVNKfkFMhEHazIR0iPvsOcXzb40-upmzWthRtfz6Yc" /> */}
-      </head>
-      <body className="font-century-gothic bg-white text-black" cz-shortcut-listen="true" >
-        <Navbar />
-        <GoTopButton/>
-        {children}
-        {/* <Footer /> */}
+      <head />
+      <body className="font-century-gothic bg-white text-black" cz-shortcut-listen="true">
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );
 }
-
