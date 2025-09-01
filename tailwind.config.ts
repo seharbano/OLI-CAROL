@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-// import img from "@/assets/pngs/hero-img.webp";
 const config = {
   content: [
     "./pages/**/*.{ts,tsx}",

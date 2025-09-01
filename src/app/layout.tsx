@@ -8,9 +8,9 @@ import GoTopButton from "@/globalComponents/buttons/GoTopButton";
 
 export const metadata: Metadata = {
   title: "OLI&CAROL",
-  description: "Dentistry99",
+  description: "kids toys",
   icons: {
-    icon: "/favicon.png",
+    icon: "/duck.svg",
   },
 };
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="gHVNKfkFMhEHazIR0iPvsOcXzb40-upmzWthRtfz6Yc" />
+        {/* <meta name="google-site-verification" content="gHVNKfkFMhEHazIR0iPvsOcXzb40-upmzWthRtfz6Yc" /> */}
       </head>
       <body className="font-century-gothic bg-white text-black" cz-shortcut-listen="true" >
         <Navbar />

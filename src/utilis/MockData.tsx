@@ -2,6 +2,16 @@
 import sliderImg1 from "@/assets/pngs/slider-img-1.webp";
 import sliderHoverImg1 from "@/assets/pngs/slider-hover-img-1.webp";
 
+import BabyToys from "@/assets/pngs/zero-six-month-baby.webp";
+import SixTwelve from "@/assets/pngs/six-one-year-baby.webp";
+import TwelveEighteen from "@/assets/pngs/one-three-year-baby.webp";
+import EighteenTwentyFour from "@/assets/pngs/three-plus-year-baby.webp";
+
+import Teethers from "@/assets/pngs/teethers.webp";
+import Cars from "@/assets/pngs/baby-toys-cars.webp";
+import RattleToys from "@/assets/pngs/carol-rattle.webp";
+import BathToys from "@/assets/pngs/carol-bath.webp";
+
 export const Kidsproducts = [
     {
       id: 1,
@@ -66,4 +76,49 @@ export const Kidsproducts = [
         image: sliderImg1,
         hoverImage: sliderHoverImg1,
       },
+  ];
+
+  export const ageCards = [
+    {
+      id: 1,
+      img: BabyToys,
+      text: "0 - 6 months",
+    },
+    {
+      id: 2,
+      img: SixTwelve,
+      text: "6 - 12 months",
+    },
+    {
+      id: 3,
+      img: TwelveEighteen,
+      text: "12 - 18 months",
+    },
+    {
+      id: 4,
+      img: EighteenTwentyFour,
+      text: "18 - 24 months",
+    },
+  ];
+  export const categoryCards = [
+    {
+      id: 1,
+      img: Teethers,
+      text: "Baby Teethers",
+    },
+    {
+      id: 2,
+      img: Cars,
+      text: "Cars",
+    },
+    {
+      id: 3,
+      img: RattleToys,
+      text: "Rattle Toys",
+    },
+    {
+      id: 4,
+      img: BathToys,
+      text: "Bath Toys",
+    },
   ];
