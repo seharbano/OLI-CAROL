@@ -1,0 +1,66 @@
+
+export const Kidsproducts = [
+    {
+      id: 1,
+      title: "Wally the Watermelon Baby Teether",
+      price: 19.00,
+      image: require("@/assets/pngs/slider-img-1.webp"),
+      hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+    },
+    {
+      id: 2,
+      title: "Banana Toy",
+      price: 15.50,
+      image: require("@/assets/pngs/slider-img-1.webp"),
+      hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+    },
+    {
+      id: 3,
+      title: "Strawberry Plush",
+      price: 12.99 ,
+      image: require("@/assets/pngs/slider-img-1.webp"),
+      hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+    },
+    {
+        id: 4,
+        title: "Wally the Watermelon Baby Teether",
+        price: 19.00 ,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+      {
+        id: 5,
+        title: "Banana Toy",
+        price: 15.50 ,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+      {
+        id: 6,
+        title: "Strawberry Plush",
+        price: 1299,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+      {
+        id: 7,
+        title: "Wally the Watermelon Baby Teether",
+        price: 19.00 ,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+      {
+        id: 8,
+        title: "Banana Toy",
+        price: 15.50 ,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+      {
+        id: 9,
+        title: "Strawberry Plush",
+        price: 12.99,
+        image: require("@/assets/pngs/slider-img-1.webp"),
+        hoverImage:  require("@/assets/pngs/slider-hover-img-1.webp"),
+      },
+  ];
