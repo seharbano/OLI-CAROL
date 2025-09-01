@@ -26,7 +26,7 @@ const GoTopButton = () => {
     <div
       onClick={scrollToTop}
       className={`
-        fixed right-12 z-[1000] h-10 w-10 flex items-center justify-center 
+        fixed right-6 sm:right-12 z-[1000] h-10 w-10 flex items-center justify-center 
         rounded-[5px] bg-black hover:bg-black/80 text-white cursor-pointer
         transition-all duration-400 ease-in-out
         ${isVisible ? "bottom-12 opacity-100" : "-bottom-10 opacity-0"}

@@ -42,6 +42,7 @@
 
 body {
   font-family: "Century Gothic", sans-serif;
+  color: black;
 }
 
 .font-century-gothic {
@@ -56,4 +57,22 @@ body {
   width: 0px;
   height: 0px;
   border: 1px solid #E4E7E9;
+}
+
+.menu-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: slideInMenu 0.4s ease forwards;
+}
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

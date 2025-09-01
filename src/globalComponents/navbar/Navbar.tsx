@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import search from "@/assets/svgs/search.svg";
 import cart from "@/assets/svgs/cart.svg";
 import profile from "@/assets/svgs/user-profile.svg";
 import Image from "next/image";
 import CartSidebar from "./CartSidebar";
 import { Menu, Search, X } from "lucide-react";
+import NavMenuSidebar from "./NavMenuSidebar";
 
 const Navbar = () => {
   const [isSearching, setIsSearching] = useState(false);
@@ -14,22 +15,28 @@ const Navbar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menu: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 250);
+  };
+
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsSearching(false);
-        setIsCartOpen(false);
-        setIsMenuOpen(false);
-        setQuery("");
-      }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
     <>
-
       <div className="bg-[#b89778] font-urbane-rounded whitespace-nowrap max-[420px]:text-[12px] py-2 text-center">
         <p>COOLEST 100% NATURAL & SUSTAINABLE TOYS</p>
       </div>
@@ -47,71 +54,109 @@ const Navbar = () => {
               autoFocus={isSearching}
               className="flex-1 outline-none placeholder:text-black text-black px-3 py-2 text-[15px]"
             />
-
             <X onClick={() => setIsSearching(false)} className="shrink-0" />
           </div>
         </div>
 
+
         <div className="w-full justify-between py-4 flex items-center px-16 max-[1024px]:px-8 max-[768px]:px-4">
 
           <div className="xl:hidden flex items-center gap-3">
-            <Menu onClick={() => setIsMenuOpen(true)} />
-            <Image src={search} alt="search" onClick={() => setIsSearching(true)} />
+            <Menu
+              onClick={() => setIsMenuOpen(true)}
+              className="cursor-pointer text-black"
+            />
+            <Image
+              src={search}
+              alt="search"
+              onClick={() => setIsSearching(true)}
+              className="cursor-pointer"
+            />
           </div>
 
+
           <div className="cursor-pointer">
-            <h1 className="text-[30px] max-[768px]:text-[24px] max-[420px]:text-[18px] font-bold text-black">OLI&CAROL</h1>
+            <h1 className="text-[30px] max-[768px]:text-[24px] max-[420px]:text-[18px] font-bold text-black">
+              OLI&CAROL
+            </h1>
           </div>
 
 
           <div className="flex-1 justify-center hidden xl:flex">
             <ul className="flex gap-10 text-[14px] font-[800] uppercase text-black">
-              {["shop", "mealtime", "stack & bounce", "collections", "more than toys"].map((item, i) => (
-                <li
-                  key={i}
-                  className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0"
-                >
-                  {item}
-                </li>
-              ))}
+
+              <li
+                className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0"
+                onMouseEnter={() => handleMouseEnter("shop")}
+                onMouseLeave={handleMouseLeave}
+              >
+                Shop
+                {openDropdown === "shop" && (
+                  <div
+                    className="absolute left-0 mt-2 w-[300px] bg-white shadow-lg rounded-md py-2 z-50"
+                    onMouseEnter={() => handleMouseEnter("shop")}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">ALL PRODUCTS</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">BABY GIFT SETS 🎁</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Baby Teethers</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Mini Teethers for Newborns</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Rattle Toys</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Mini Doudou Teethers</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Baby Bath Toys</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Sensory Balls</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">BABY STACKING TOYS</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">PRETEND PLAY TOYS</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">BABY ACCESSORIES</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Textile Products</p>
+                  </div>
+                )}
+              </li>
+
+
+              <li className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0">
+                Mealtime
+              </li>
+              <li className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0">
+                Stack & Bounce
+              </li>
+              <li className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0">
+                Collections
+              </li>
+
+
+              <li
+                className="relative font-urbane-rounded cursor-pointer after:content-[''] after:absolute after:left-1/2 after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:ease-in-out hover:after:w-full hover:after:left-0"
+                onMouseEnter={() => handleMouseEnter("more")}
+                onMouseLeave={handleMouseLeave}
+              >
+                More Than Toys
+                {openDropdown === "more" && (
+                  <div
+                    className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 z-50"
+                    onMouseEnter={() => handleMouseEnter("more")}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Young Entrepeneurs</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Why Choose Oli&Carol</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">We are Green</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]"> Save the Corals</p>
+                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">LATEST NEWS BLOG</p>
+                  </div>
+                )}
+              </li>
             </ul>
           </div>
 
-
-
           <div className="flex justify-between gap-6 max-[768px]:gap-3 items-center">
-            <button className="xl:flex hidden" onClick={() => setIsSearching(true)}>
-              <Image src={search} alt="search" />
-            </button>
-            <Image src={profile} alt="profile" />
-            <button onClick={() => setIsCartOpen(true)}>
-              <Image src={cart} alt="cart" />
-            </button>
+            <Image src={search} alt="search" className="xl:flex hidden cursor-pointer" onClick={() => setIsSearching(true)} />
+            <Image src={profile} alt="profile" className="cursor-pointer" />
+            <Image src={cart} alt="cart" onClick={() => setIsCartOpen(true)} className="cursor-pointer" />
           </div>
         </div>
       </div>
 
-      <div className={`fixed top-0 left-0 w-[280px] sm:w-[400px] h-full bg-white shadow-lg z-[350] transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-lg font-bold">Menu</h2>
-          <X onClick={() => setIsMenuOpen(false)} />
-        </div>
-        <ul className="flex flex-col gap-6 p-6 text-[16px] font-[700] uppercase">
-          <li>shop</li>
-          <li>mealtime</li>
-          <li>stack & bounce</li>
-          <li>collections</li>
-          <li>more than toys</li>
-        </ul>
-      </div>
-
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-40 z-[250]"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-
+      <NavMenuSidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <CartSidebar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
     </>
   );
