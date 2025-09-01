@@ -1,6 +1,6 @@
 
 import React from 'react';
-import GlobalButton from '../globalButton/GlobalButton';
+import GlobalButton from '../buttons/GlobalButton';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
