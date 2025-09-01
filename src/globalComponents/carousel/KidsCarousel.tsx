@@ -1,15 +1,14 @@
 "use client"
 import React, { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // arrow icons
 import { Kidsproducts } from "@/utilis/MockData";
 import HeroSliderCard from "../cards/HeroSliderCard";
 
-const KidsCarousel = ({ products }: any) => {
+const KidsCarousel = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
-  // Check if arrows should be shown
+
   const checkForScrollPosition = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -42,13 +41,13 @@ const KidsCarousel = ({ products }: any) => {
 
   return (
     <div className="relative w-full">
-      {/* Left Arrow */}
+     
       {canScrollLeft && (
         <button
           onClick={() => scroll("left")}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-md shadow p-2 hover:bg-white"
         >
-          {/* <ChevronLeft size={24} /> */}
+          
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="#000" fillRule="evenodd" clipRule="evenodd">
               <path d="M2.461 12a.75.75 0 0 1 .75-.75l17.79.012a.75.75 0 1 1-.002 1.5L3.21 12.75a.75.75 0 0 1-.749-.75" />
@@ -58,7 +57,7 @@ const KidsCarousel = ({ products }: any) => {
         </button>
       )}
 
-      {/* Scrollable Container */}
+
       <div
         ref={scrollRef}
         className="flex kids-carasoule-scroll overflow-x-auto no-scrollbar scroll-smooth gap-4 px-10"
@@ -74,13 +73,13 @@ const KidsCarousel = ({ products }: any) => {
         ))}
       </div>
 
-      {/* Right Arrow */}
+    
       {canScrollRight && (
         <button
           onClick={() => scroll("right")}
           className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-md shadow p-2 hover:bg-white"
         >
-          {/* <ChevronRight size={24} /> */}
+         
           <svg className="rotate-180" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="#000" fillRule="evenodd" clipRule="evenodd">
               <path d="M2.461 12a.75.75 0 0 1 .75-.75l17.79.012a.75.75 0 1 1-.002 1.5L3.21 12.75a.75.75 0 0 1-.749-.75" />

@@ -1,12 +1,12 @@
-// components/HeroSliderCard.jsx
+
 import React from 'react';
 import GlobalButton from '../globalButton/GlobalButton';
 import Image from 'next/image';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 type props = {
-    image: any;
-    // rating: boolean;
-    hoverImage:any;
+    image: string | StaticImport;
+    hoverImage: string | StaticImport;
     title: string;
     price: number;
   };

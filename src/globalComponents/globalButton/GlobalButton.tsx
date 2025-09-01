@@ -11,7 +11,7 @@ type Props = {
   bgColor?: string;
   loading?: boolean;
   disabled?: boolean;
-  flexDirection?: any;
+  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse";
   loaderColor?: string;
   borderColor?: string;
   borderWidth?: string;

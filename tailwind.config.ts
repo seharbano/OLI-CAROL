@@ -21,7 +21,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["Public Sans", "sans-serif"],
+        sans: ["Century Gothic", "sans-serif"],
+        'century-gothic': ["Century Gothic", "sans-serif"],
+        'urbane-rounded': ["Urbane Rounded", "sans-serif"],
       },
       animation: {
         "bounce-in-up": "bounceInUp 0.8s ease-out both",
