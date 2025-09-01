@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="gHVNKfkFMhEHazIR0iPvsOcXzb40-upmzWthRtfz6Yc" />
       </head>
-      <body className="poppins bg-white text-black"  cz-shortcut-listen="true" >
+      <body className="font-century-gothic bg-white text-black"  cz-shortcut-listen="true" >
         <Navbar />
         {children}
         {/* <Footer /> */}

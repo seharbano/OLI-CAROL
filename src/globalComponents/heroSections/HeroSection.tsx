@@ -1,7 +1,6 @@
 import React from 'react';
 import heroimg from '@/assets/pngs/hero-img.webp'
 import Image from 'next/image';
-import GlobalButton from '../globalButton/GlobalButton';
 const HeroSection = () => {
   return (
     <div>

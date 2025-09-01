@@ -1,5 +1,45 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century Gothic.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Urbane Rounded';
+  src: url('/fonts/UrbaneRounded-DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century Gothic Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century Gothic Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/fonts/Century Gothic Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,11 +62,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Century Gothic", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-family: "Century Gothic", sans-serif;
 }
-.poppins {
-  font-family: var(--font-poppins);
+
+.font-century-gothic {
+  font-family: "Century Gothic", sans-serif !important;
 }
+
+.font-urbane-rounded {
+  font-family: "Urbane Rounded", sans-serif !important;
+}
+
 .kids-carasoule-scroll::-webkit-scrollbar {
   width: 0px;
   height: 0px;
