@@ -3,6 +3,7 @@ import React from 'react'
 import { usePathname } from "next/navigation";
 import Navbar from "@/globalComponents/navbar/Navbar";
 import GoTopButton from "@/globalComponents/buttons/GoTopButton";
+import Footer from '@/globalComponents/footer/Footer';
 
 const ClientLayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -14,6 +15,7 @@ const ClientLayoutWrapper = ({ children }: { children: React.ReactNode }) => {
       {!hideNavbar && <Navbar />}
       {children}
       {!hideNavbar && <GoTopButton />}
+      {!hideNavbar && <Footer/>}
     </>
   );
 }
