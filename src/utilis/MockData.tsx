@@ -18,6 +18,8 @@ export const Kidsproducts = [
     title: "Wally the Watermelon Baby Teether",
     price: 19.00,
     image: sliderImg1,
+    discountBol:true,
+    discount:"70%",
     hoverImage: sliderHoverImg1,
   },
   {
@@ -39,6 +41,8 @@ export const Kidsproducts = [
     title: "Wally the Watermelon Baby Teether",
     price: 19.00,
     image: sliderImg1,
+    discountBol:true,
+    discount:"sale",
     hoverImage: sliderHoverImg1,
   },
   {

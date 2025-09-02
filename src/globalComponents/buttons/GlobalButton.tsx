@@ -15,6 +15,8 @@ type Props = {
   borderWidth?: string;
   className?: string;
   onClick?: (e: React.FormEvent) => void;
+  icon?: React.ReactNode; 
+  showIcon?: boolean; 
 };
 
 const GlobalButton = ({
@@ -30,8 +32,9 @@ const GlobalButton = ({
   disabled = false,
   loaderColor = "#ffff",
   flexDirection = "row",
+  icon,
+  showIcon = false,
 }: Props) => {
-
   return (
     <div
       onClick={(e) => {
@@ -60,7 +63,10 @@ const GlobalButton = ({
           aria-label="Loading Spinner"
         />
       ) : (
-        title
+        <>
+          {showIcon && icon && <span className="flex items-center">{icon}</span>}
+          {title}
+        </>
       )}
     </div>
   );

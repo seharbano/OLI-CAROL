@@ -9,9 +9,11 @@ type props = {
     hoverImage: string | StaticImport;
     title: string;
     price: number;
+    discount?:string;
+    discountBol?:boolean;
   };
   
-const HeroSliderCard = ({ image, hoverImage, title, price }: props) => {
+const HeroSliderCard = ({ image, hoverImage, title, price,discount,discountBol=false }: props) => {
   return (
     <div className="w-[280px] m-4 group flex flex-col justify-center">
       <div className="relative w-[280px] h-[280px] overflow-hidden">
@@ -26,8 +28,10 @@ const HeroSliderCard = ({ image, hoverImage, title, price }: props) => {
           alt={title}
           className="absolute inset-0 w-full h-full object-cover opacity-0 transition duration-500 group-hover:opacity-100"
         />
-
-      
+{discountBol ? 
+      <p className='absolute top-2 left-2 text-white bg-[#cf9f78] text-[12px] rounded-full p-1 px-2'>{discount}</p>
+      :""
+}
         <div
           className="absolute bottom-[-60px] w-[100%] left-1/2 -translate-x-1/2 transition-all duration-500 opacity-0 
           group-hover:bottom-0 group-hover:opacity-100"
