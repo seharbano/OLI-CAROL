@@ -18,8 +18,7 @@ export const Kidsproducts = [
     title: "Wally the Watermelon Baby Teether",
     price: 19.00,
     image: sliderImg1,
-    discountBol:true,
-    discount:"70%",
+    tag: "70 %",
     hoverImage: sliderHoverImg1,
   },
   {
@@ -27,6 +26,7 @@ export const Kidsproducts = [
     title: "Banana Toy",
     price: 15.50,
     image: sliderImg1,
+    tag: "New",
     hoverImage: sliderHoverImg1,
   },
   {
@@ -41,8 +41,7 @@ export const Kidsproducts = [
     title: "Wally the Watermelon Baby Teether",
     price: 19.00,
     image: sliderImg1,
-    discountBol:true,
-    discount:"sale",
+    tag: "sale",
     hoverImage: sliderHoverImg1,
   },
   {
@@ -150,4 +149,123 @@ export const moreThanToysMenus = [
   { label: "We are Green", path: "/we-are-green" },
   { label: "Save the Corals", path: "/save-the-corals" },
   { label: "LATEST NEWS BLOG", path: "/blog" },
+];
+
+
+// product detail imgesssssssssss 
+
+import detail_small_01 from "@/assets/pngs/detail-small-1.webp";
+import detail_small_02 from "@/assets/pngs/detail-small-2.jpg";
+import detail_small_03 from "@/assets/pngs/detail-small-3.jpg";
+import detail_small_04 from "@/assets/pngs/detail-small-4.webp";
+import detail_small_05 from "@/assets/pngs/detail-small-5.jpg";
+import detail_small_06 from "@/assets/pngs/detail-small-6.jpg";
+import detail_small_07 from "@/assets/pngs/detail-small-1.webp";
+import detail_small_08 from "@/assets/pngs/detail-small-5.jpg";
+import detail_small_09 from "@/assets/pngs/slider-img-1.webp";
+import detail_small_10 from "@/assets/pngs/slider-hover-img-1.webp";
+import detail_small_11 from "@/assets/pngs/zero-six-month-baby.webp";
+import detail_small_12 from "@/assets/pngs/six-one-year-baby.webp";
+import detail_small_13 from "@/assets/pngs/one-three-year-baby.webp";
+import detail_small_14 from "@/assets/pngs/three-plus-year-baby.webp";
+import detail_small_15 from "@/assets/pngs/teethers.webp";
+import detail_small_16 from "@/assets/pngs/baby-toys-cars.webp";
+import detail_small_17 from "@/assets/pngs/carol-rattle.webp";
+import detail_small_18 from "@/assets/pngs/carol-bath.webp";
+
+export const ProductDetailColorOptions = [
+  {
+    name: "Betty The Beetroot",
+    images: [
+      detail_small_01,
+      detail_small_02,
+      detail_small_11,
+      detail_small_03,
+      detail_small_12,
+      detail_small_09,
+      detail_small_10,
+      detail_small_04,
+      detail_small_05,
+      detail_small_01,
+      detail_small_04,
+      detail_small_16,
+      detail_small_17,
+    ],
+  },
+  {
+    name: "Cathy The Carrot",
+    images: [
+      detail_small_04,
+      detail_small_05,
+      detail_small_11,
+      detail_small_12,
+      detail_small_13,
+      detail_small_09,
+      detail_small_10,
+      detail_small_03,
+      detail_small_06,
+      detail_small_18,
+      detail_small_16,
+    ],
+  },
+  {
+    name: "Carl The Cucumber",
+    images: [
+      detail_small_06,
+      detail_small_07,
+      detail_small_13,
+      detail_small_14,
+      detail_small_17,
+      detail_small_09,
+      detail_small_10,
+      detail_small_05,
+      detail_small_11,
+      detail_small_15,
+    ],
+  },
+  {
+    name: "Emma The Eggplant",
+    images: [
+      detail_small_08,
+      detail_small_02,
+      detail_small_03,
+      detail_small_05,
+      detail_small_09,
+      detail_small_10,
+      detail_small_12,
+      detail_small_15,
+      detail_small_16,
+      detail_small_18,
+    ],
+  },
+  {
+    name: "Manny The Mango",
+    images: [
+      detail_small_01,
+      detail_small_04,
+      detail_small_05,
+      detail_small_06,
+      detail_small_11,
+      detail_small_09,
+      detail_small_10,
+      detail_small_15,
+      detail_small_18,
+      detail_small_17,
+    ],
+  },
+  {
+    name: "Sandy The Strawberry",
+    images: [
+      detail_small_02,
+      detail_small_05,
+      detail_small_06,
+      detail_small_13,
+      detail_small_14,
+      detail_small_09,
+      detail_small_10,
+      detail_small_11,
+      detail_small_18,
+      detail_small_16,
+    ],
+  },
 ];

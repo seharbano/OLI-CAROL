@@ -38,7 +38,7 @@ const Footer = () => {
             <Image src={icon} alt='icon' className='w-[110px] max-[750px]:hidden' />
             <div className='w-[55%] max-[640px]:w-full'>
               <p className='text-[18px] leading-5'>Access exclusive discounts and discover our sustainable toys for cool kids.</p>
-              <button className='bg-[black] text-[#d3b192] font-[500] text-[20px] w-[90%] h-10 rounded-full mt-5'>I'M IN</button>
+              <button className='bg-[black] text-[#d3b192] font-[500] text-[20px] w-[90%] h-10 rounded-full mt-5'>I&apos;M IN</button>
             </div>
           </div>
         </div>
@@ -182,9 +182,9 @@ const Footer = () => {
           <Image src={visa} alt="visa" className="w-8 h-5" />
         </div>
       </div>
-      <h1 className="text-[100px] max-[1000px]:text-[70px] max-[750px]:text-[45px] max-[450px]:text-[25px] text-center font-[800]">MORE THAN TOYS</h1>
+      <h1 className="text-[100px] font-urbane-rounded max-[1000px]:text-[70px] max-[750px]:text-[45px] max-[450px]:text-[25px] text-center font-[800]">MORE THAN TOYS</h1>
     </div>
   )
 }
 
-export default Footer
+export default Footer;

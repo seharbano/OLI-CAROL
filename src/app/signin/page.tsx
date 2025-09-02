@@ -16,7 +16,7 @@ const Signin = () => {
         
         <div>
           <p className='text-[25px] font-bold font-urbane-rounded leading-[35px]'>Sign in</p>
-          <p className='text-[14px] text-[#575757]'>Choose how you'd like to sign in</p>
+          <p className='text-[14px] text-[#575757]'>Choose how you&apos;d like to sign in</p>
         </div>
 
         <GlobalButton title='Sign in with Shop' className='bg-[#5434eb] text-white w-full rounded-[10px]'/>
