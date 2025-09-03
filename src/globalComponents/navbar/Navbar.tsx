@@ -8,6 +8,7 @@ import Image from "next/image";
 import CartSidebar from "./CartSidebar";
 import { Menu, Search, X } from "lucide-react";
 import NavMenuSidebar from "./NavMenuSidebar";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isSearching, setIsSearching] = useState(false);
@@ -137,8 +138,12 @@ const Navbar = () => {
                     onMouseEnter={() => handleMouseEnter("more")}
                     onMouseLeave={handleMouseLeave}
                   >
+                    <Link href="/youngEntrepeneurs">
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Young Entrepeneurs</p>
+                    </Link>
+                    <Link href="/whyChooseOliCarol">
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Why Choose Oli&Carol</p>
+                    </Link>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">We are Green</p>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]"> Save the Corals</p>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">LATEST NEWS BLOG</p>

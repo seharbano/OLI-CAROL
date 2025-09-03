@@ -12,6 +12,14 @@ import Cars from "@/assets/pngs/baby-toys-cars.webp";
 import RattleToys from "@/assets/pngs/carol-rattle.webp";
 import BathToys from "@/assets/pngs/carol-bath.webp";
 
+import chooseCardone from "@/assets/pngs/choose-card-1.webp";
+import chooseCardtwo from "@/assets/pngs/choose-card-2.webp";
+import chooseCardthree from "@/assets/pngs/choose-card-3.webp";
+import chooseCardfour from "@/assets/pngs/choose-card-4.webp";
+import chooseCardfive from "@/assets/pngs/choose-card-5.webp";
+import chooseCardSix from "@/assets/pngs/choose-card-6.webp";
+
+
 export const Kidsproducts = [
   {
     id: 1,
@@ -269,3 +277,42 @@ export const ProductDetailColorOptions = [
     ],
   },
 ];
+
+export const whyChooseOliCarolData = [
+  {
+    id: 1,
+    title: "Eco-Friendly Materials",
+    description: "Our toys are made with 100% natural rubber, ensuring safety and sustainability.",
+    img: chooseCardone
+  },
+  {
+    id: 2,
+    title: "Handcrafted with Love",
+    description: "Each product is uniquely handcrafted by artisans, making every piece special.",
+    img:chooseCardtwo
+  },
+  {
+    id: 3,
+    title: "Safe for Kids",
+    description: "Free from harmful chemicals, safe for teething and playing.",
+    img: chooseCardthree
+  },
+  {
+    id: 4,
+    title: "Eco-Friendly Materials",
+    description: "Our toys are made with 100% natural rubber, ensuring safety and sustainability.",
+    img: chooseCardfour
+  },
+  {
+    id: 5,
+    title: "Handcrafted with Love",
+    description: "Each product is uniquely handcrafted by artisans, making every piece special.",
+    img:chooseCardfive
+  },
+  {
+    id: 6,
+    title: "Safe for Kids",
+    description: "Free from harmful chemicals, safe for teething and playing.",
+    img: chooseCardSix
+  },
+]
