@@ -19,6 +19,24 @@ import chooseCardfour from "@/assets/pngs/choose-card-4.webp";
 import chooseCardfive from "@/assets/pngs/choose-card-5.webp";
 import chooseCardSix from "@/assets/pngs/choose-card-6.webp";
 
+import radish from "@/assets/pngs/radish.webp";
+import hoverRadish from "@/assets/pngs/teethers.webp";
+import carrotPlate from "@/assets/pngs/carrot-plate.webp";
+import hoverCarrotPlate from "@/assets/pngs/carrot-plate-hover.avif";
+import artichoke from "@/assets/pngs/artichoke.avif";
+import hoverArtichoke from "@/assets/pngs/artichoke-hover.avif";
+import carrot from "@/assets/pngs/carrot.webp";
+import hoverCarrot from "@/assets/pngs/carrot-hover.avif";
+import apple from "@/assets/pngs/apple-bowl.webp";
+import hoverApple from "@/assets/pngs/apple-bowl-hover.avif";
+import pack from "@/assets/pngs/pack-newborn.avif";
+import hoverPack from "@/assets/pngs/pack-newborn-hover.avif";
+import cherry from "@/assets/pngs/cherry.avif";
+import hoverCherry from "@/assets/pngs/cherry-hover.gif";
+import carrotbaby from "@/assets/pngs/carrot-baby.avif";
+import hoverCarrotBaby from "@/assets/pngs/detail-small-3.jpg";
+import watermelon from "@/assets/pngs/watermelon-bowl.avif";
+import hoverWatermelon from "@/assets/pngs/watermelon-bowl-hover.avif";
 
 export const Kidsproducts = [
   {
@@ -134,7 +152,84 @@ export const categoryCards = [
   },
 ];
 
-
+export const fruitsCard = [
+  {
+    id: 1,
+    price: 19.90,
+    image: radish,
+    discount:"70%",
+    discountBol:true,
+    hoverImage: hoverRadish,
+    title: "Ramona the Radish Baby Teether",
+  },
+  {
+    id: 2,
+    price: 29.90,
+    image: carrotPlate,
+    hoverImage: hoverCarrotPlate,
+    title: "Cathy the Carrot Plate & Spoon set",
+  },
+  {
+    id: 3,
+    price: 19.90,
+    image: sliderImg1,
+    hoverImage: sliderHoverImg1,
+    title: "Wally the Watermelon Baby Teether",
+  },
+  {
+    id: 4,
+    price: 29.90,
+    discount:"sale",
+    image: artichoke,
+    discountBol:true,
+    tag: "SOLD OUT",
+    hoverImage: hoverArtichoke,
+    title: "Artichoke Rattle Toy",
+  },
+  {
+    id: 5,
+    price: 24.90,
+    image: carrot,
+    hoverImage: hoverCarrot,
+    title: "Cathy the Carrot Mini Doudou-Teether",
+  },
+  {
+    id: 6,
+    price: 32.90,
+    image: apple,
+    hoverImage: hoverApple,
+    title: "Pepa The Apple Bowl & Spoon Set",
+  },
+  {
+    id: 7,
+    image: pack,
+    price: 39.90,
+    hoverImage: hoverPack,
+    title: "Newborn Gift Set 1 Mini Teether + 2 Teethers",
+  },
+  {
+    id: 8,
+    price: 32.90,
+    image: cherry,
+    tag: "NEW",
+    hoverImage: hoverCherry,
+    title: "Cherry Stacking Toy & Rattle Ball",
+  },
+  {
+    id: 9,
+    price: 24.90,
+    image: carrotbaby,
+    hoverImage: hoverCarrotBaby,
+    title: "Cathy The Carrot Baby Car Toy",
+  },
+  {
+    id: 10,
+    price: 32.90,
+    image: watermelon,
+    hoverImage: hoverWatermelon,
+    title: "Wally The Watermelon Bowl & Spoon Set",
+  },
+];
 
 export const shopMenus = [
   { label: "ALL PRODUCTS", path: "/all-products" },
@@ -180,6 +275,7 @@ import detail_small_15 from "@/assets/pngs/teethers.webp";
 import detail_small_16 from "@/assets/pngs/baby-toys-cars.webp";
 import detail_small_17 from "@/assets/pngs/carol-rattle.webp";
 import detail_small_18 from "@/assets/pngs/carol-bath.webp";
+import { Tag } from "lucide-react";
 
 export const ProductDetailColorOptions = [
   {
