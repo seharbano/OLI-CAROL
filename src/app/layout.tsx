@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
-
 export const metadata: Metadata = {
   title: "OLI&CAROL",
   description: "kids toys",

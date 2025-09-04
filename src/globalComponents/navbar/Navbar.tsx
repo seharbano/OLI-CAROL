@@ -2,20 +2,21 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import search from "@/assets/svgs/search.svg";
-import cart from "@/assets/svgs/cart.svg";
+import cartIcon from "@/assets/svgs/cart.svg";
 import profile from "@/assets/svgs/user-profile.svg";
 import Image from "next/image";
 import CartSidebar from "./CartSidebar";
 import { Menu, Search, X } from "lucide-react";
 import NavMenuSidebar from "./NavMenuSidebar";
 import Link from "next/link";
+import { useCart } from "@/utilis/CartContext";
 
 const Navbar = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [query, setQuery] = useState("");
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  // const { cart, isCartOpen, toggleCart } = useCart();
+  const { totalItems, toggleCart } = useCart();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -77,9 +78,11 @@ const Navbar = () => {
 
 
           <div className="cursor-pointer">
+            <Link href="/">
             <h1 className="text-[30px] max-[768px]:text-[24px] max-[420px]:text-[18px] font-bold text-black">
               OLI&CAROL
             </h1>
+            </Link>
           </div>
 
 
@@ -156,13 +159,18 @@ const Navbar = () => {
           <div className="flex justify-between gap-6 max-[768px]:gap-3 items-center">
             <Image src={search} alt="search" className="xl:flex hidden cursor-pointer" onClick={() => setIsSearching(true)} />
             <Image src={profile} alt="profile" className="cursor-pointer" />
-            <Image src={cart} alt="cart" onClick={() => setIsCartOpen(true)} className="cursor-pointer" />
+            <div className="relative cursor-pointer" onClick={() => toggleCart(true)}>
+  <Image src={cartIcon} alt="cart" />
+  <span className="absolute -top-2 -right-[10px] bg-white text-[#cf9f78] text-[10px] font-bold rounded-full px-1.5 py-0.5">
+    {totalItems}
+  </span>
+</div>
           </div>
         </div>
       </div>
 
       <NavMenuSidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <CartSidebar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      <CartSidebar   />
     </>
   );
 };

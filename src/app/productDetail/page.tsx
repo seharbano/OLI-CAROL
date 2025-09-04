@@ -121,6 +121,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      
       <div className="md:mt-8 sm:mt-6 mt-4 ">
         <h1 className="lg:px-16 md:6 px-4 md:text-[35px]  text-[25px]  font-urbane-rounded font-bold">Related Products</h1>
         <KidsCarousel />

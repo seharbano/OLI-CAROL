@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import StarsRating from '../starsRating/StarsRating';
-
+import { useCart } from "@/utilis/CartContext";
 type props = {
   image: string | StaticImport;
   hoverImage: string | StaticImport;
@@ -13,6 +13,7 @@ type props = {
 };
 
 const HeroSliderCard = ({ image, hoverImage, title, price, tag, }: props) => {
+  const { addToCart } = useCart();
   return (
     <div className="w-[280px] m-4 group flex flex-col justify-center">
       <div className="relative w-[280px] h-[280px] overflow-hidden">
@@ -36,7 +37,9 @@ const HeroSliderCard = ({ image, hoverImage, title, price, tag, }: props) => {
           className="absolute bottom-[-60px] w-[100%] left-1/2 -translate-x-1/2 transition-all duration-500 opacity-0 
           group-hover:bottom-0 group-hover:opacity-100"
         >
-          <button className='bg-white/30 backdrop-blur-sm w-[100%] h-[47px] font-[600] text-[15px] rounded-0 text-black'>
+          <button
+         onClick={() => addToCart({ id: title, title, price, image })}
+          className='bg-white/30 backdrop-blur-sm w-[100%] h-[47px] font-[600] text-[15px] rounded-0 text-black'>
             add to cart
           </button>
         </div>
