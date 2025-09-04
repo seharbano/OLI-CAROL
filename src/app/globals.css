@@ -59,6 +59,19 @@ body {
   border: 1px solid #E4E7E9;
 }
 
+/* horizontal scroll */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  height: 0px;
+}
+
 .menu-item {
   opacity: 0;
   transform: translateX(-10px);

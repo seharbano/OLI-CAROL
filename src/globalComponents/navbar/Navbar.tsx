@@ -98,7 +98,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleMouseEnter("shop")}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">ALL PRODUCTS</p>
+                    <Link href="/productList" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">ALL PRODUCTS</Link>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">BABY GIFT SETS 🎁</p>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Baby Teethers</p>
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Mini Teethers for Newborns</p>
