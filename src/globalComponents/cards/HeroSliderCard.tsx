@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import StarsRating from '../starsRating/StarsRating';
 import { useCart } from "@/utilis/CartContext";
+import Link from 'next/link';
 type props = {
   image: string | StaticImport;
   hoverImage: string | StaticImport;
@@ -44,7 +45,9 @@ const HeroSliderCard = ({ image, hoverImage, title, price, tag, }: props) => {
           </button>
         </div>
       </div>
+      <Link href="./productDetail">
       <p className="mt-2 text-center sm:text-[15px] text-[13px]">{title}</p>
+      </Link>
       <div className='mx-auto flex sm:text-[15px] text-[13px]'><StarsRating />(6)</div>
       <p className="text-center sm:text-[15px] text-[13px]">€{price}</p>
     </div>
