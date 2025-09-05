@@ -11,19 +11,51 @@ import KidsCarousel from "@/globalComponents/carousel/KidsCarousel";
 import ProductDetailCard from "@/globalComponents/cards/ProductDetailCard";
 import { useParams } from "next/navigation";
 import { useCart } from "@/utilis/CartContext";
-
 export type ProductDetailColor = {
   name: string;
   images: StaticImageData[];
 };
 
-
 const ProductDetail = () => {
-  const { id } = useParams();
-  console.log(id);
+//   const { id } = useParams();
+//   console.log(id);
   
-  const product = Kidsproducts.find((p) => String(p.id) === id);
+//   const product = Kidsproducts.find((p) => String(p.id) === id);
  
+// if (!product) {
+//   return <p>Product not found</p>;
+// }
+
+// if (!product.colorOptions || product.colorOptions.length === 0) {
+//   return <p>No color options available</p>;
+// }
+// const [selectedColor, setSelectedColor] = useState(product.colorOptions[0]);
+//   const [bigImage, setBigImage] = useState(product.colorOptions[0].images[0]);
+//   const { addToCart } = useCart();
+
+//   const handleColorChange = (color: ProductDetailColor) => {
+//     setSelectedColor(color);
+//     setBigImage(color.images[0]);
+//   };
+
+
+
+
+
+const { id } = useParams();
+console.log(id);
+
+const product = Kidsproducts.find((p) => String(p.id) === id);
+
+// ✅ types specify kiye
+const [selectedColor, setSelectedColor] = useState<ProductDetailColor | null>(
+  product?.colorOptions?.[0] ?? null
+);
+const [bigImage, setBigImage] = useState<StaticImageData | null>(
+  product?.colorOptions?.[0]?.images?.[0] ?? null
+);
+const { addToCart } = useCart();
+
 if (!product) {
   return <p>Product not found</p>;
 }
@@ -32,43 +64,42 @@ if (!product.colorOptions || product.colorOptions.length === 0) {
   return <p>No color options available</p>;
 }
 
-  const [selectedColor, setSelectedColor] = useState(product.colorOptions[0]);
-  const [bigImage, setBigImage] = useState(product.colorOptions[0].images[0]);
+const handleColorChange = (color: ProductDetailColor) => {
+  setSelectedColor(color);
+  setBigImage(color.images[0]);
+};
 
-  // const [selectedColor, setSelectedColor] = useState(ProductDetailColorOptions[0]);
-  // const [bigImage, setBigImage] = useState(ProductDetailColorOptions[0].images[0]);
-
-  const handleColorChange = (color: ProductDetailColor) => {
-    setSelectedColor(color);
-    setBigImage(color.images[0]);
-  };
-  const { addToCart } = useCart();
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-6 relative lg:px-16 md:px-6 px-4 py-10">
 
         <div>
+        {bigImage && (
           <Image
             src={bigImage}
             alt={product.title}
             className="rounded-xl object-cover w-full mb-4"
           />
-
+        )}
           {/* Thumbnails */}
+          {selectedColor && (
           <div className="hidden md:grid grid-cols-2 gap-2">
             {selectedColor.images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setBigImage(img)}
-                className={`border-2 rounded-lg overflow-hidden ${bigImage.src === img.src ? "border-black" : "border-transparent"
+                className={`border-2 rounded-lg overflow-hidden
+                   ${bigImage?.src === img.src ? "border-black" : "border-transparent"
                   }`}
+                 
               >
                 <Image src={img} alt={product.title} className="w-full h-full object-cover" />
               </button>
             ))}
           </div>
+          )}
         </div>
-
+          
 
         <div className="md:pt-10">
           <p className="font-urbane-rounded text-2xl md:text-3xl">{product.title}</p>
@@ -79,13 +110,13 @@ if (!product.colorOptions || product.colorOptions.length === 0) {
 
           <div className="mt-6">
             <p className="font-medium">Color</p>
-            <p className="font-medium">{selectedColor.name}</p>
+            <p className="font-medium">{selectedColor?.name ?? "N/A"}</p>
             <div className="flex gap-3 mt-3 flex-wrap">
               {product.colorOptions.map((color, i) => (
                 <button
                   key={i}
                   onClick={() => handleColorChange(color)}
-                  className={`w-12 h-12 rounded-full border-2 flex items-center justify-center ${selectedColor.name === color.name ? "border-black" : "border-gray-300"
+                  className={`w-12 h-12 rounded-full border-2 flex items-center justify-center ${selectedColor?.name === color.name ? "border-black" : "border-gray-300"
                     }`}
                 >
                   <Image
@@ -109,7 +140,7 @@ if (!product.colorOptions || product.colorOptions.length === 0) {
                 id: product.id,
                 title: product.title,
                 price: product.price,
-                image: bigImage,
+                image: bigImage!,
               })
             }
           />
