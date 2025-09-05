@@ -38,74 +38,74 @@ import hoverCarrotBaby from "@/assets/pngs/detail-small-3.jpg";
 import watermelon from "@/assets/pngs/watermelon-bowl.avif";
 import hoverWatermelon from "@/assets/pngs/watermelon-bowl-hover.avif";
 
-export const Kidsproducts = [
-  {
-    id: 1,
-    title: "Wally the Watermelon Baby Teether",
-    price: 19.00,
-    image: sliderImg1,
-    tag: "70 %",
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 2,
-    title: "Banana Toy",
-    price: 15.50,
-    image: sliderImg1,
-    tag: "New",
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 3,
-    title: "Strawberry Plush",
-    price: 12.99,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 4,
-    title: "Wally the Watermelon Baby Teether",
-    price: 19.00,
-    image: sliderImg1,
-    tag: "sale",
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 5,
-    title: "Banana Toy",
-    price: 15.50,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 6,
-    title: "Strawberry Plush",
-    price: 12.99,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 7,
-    title: "Wally the Watermelon Baby Teether",
-    price: 19.00,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 8,
-    title: "Banana Toy",
-    price: 15.50,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-  {
-    id: 9,
-    title: "Strawberry Plush",
-    price: 12.99,
-    image: sliderImg1,
-    hoverImage: sliderHoverImg1,
-  },
-];
+// export const Kidsproducts = [
+//   {
+//     id: 1,
+//     title: "Wally the Watermelon Baby Teether",
+//     price: 19.00,
+//     image: sliderImg1,
+//     tag: "70 %",
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 2,
+//     title: "Banana Toy",
+//     price: 15.50,
+//     image: sliderImg1,
+//     tag: "New",
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 3,
+//     title: "Strawberry Plush",
+//     price: 12.99,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 4,
+//     title: "Wally the Watermelon Baby Teether",
+//     price: 19.00,
+//     image: sliderImg1,
+//     tag: "sale",
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 5,
+//     title: "Banana Toy",
+//     price: 15.50,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 6,
+//     title: "Strawberry Plush",
+//     price: 12.99,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 7,
+//     title: "Wally the Watermelon Baby Teether",
+//     price: 19.00,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 8,
+//     title: "Banana Toy",
+//     price: 15.50,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+//   {
+//     id: 9,
+//     title: "Strawberry Plush",
+//     price: 12.99,
+//     image: sliderImg1,
+//     hoverImage: sliderHoverImg1,
+//   },
+// ];
 
 export const ageCards = [
   {
@@ -275,7 +275,6 @@ import detail_small_15 from "@/assets/pngs/teethers.webp";
 import detail_small_16 from "@/assets/pngs/baby-toys-cars.webp";
 import detail_small_17 from "@/assets/pngs/carol-rattle.webp";
 import detail_small_18 from "@/assets/pngs/carol-bath.webp";
-import { Tag } from "lucide-react";
 
 export const ProductDetailColorOptions = [
   {
@@ -412,3 +411,140 @@ export const whyChooseOliCarolData = [
     img: chooseCardSix
   },
 ]
+
+
+
+import Carrot_1 from "@/assets/pngs/1st-carrot-detail-img.webp";
+import Carrot_2 from "@/assets/pngs/2nd-carrot-detail-img.webp";
+import Carrot_3 from "@/assets/pngs/3rd-carrot-detail-img.webp";
+import Carrot_4 from "@/assets/pngs/4rth-carrot-detail-img.webp";
+import Carrot_5 from "@/assets/pngs/5th-carrot-detail-img.webp";
+import Carrot_6 from "@/assets/pngs/6th-carrot-detail-img.webp";
+import Carrot_7 from "@/assets/pngs/7nth-carrot-detail-img.webp";
+import Carrot_8 from "@/assets/pngs/8th-carrot-detail-img.webp";
+import  Ramona_1 from "@/assets/pngs/1st-Ramona-detail-img.webp";
+import  Ramona_2 from "@/assets/pngs/2nd-Ramona-detail-img.webp";
+import  Ramona_3 from "@/assets/pngs/3rd-Ramona-detail-img.webp";
+import  Ramona_4 from "@/assets/pngs/4rth-Ramona-detail-img.webp";
+import  Ramona_5 from "@/assets/pngs/5th-Ramona-detail-img.webp";
+import  Ramona_6 from "@/assets/pngs/6th-Ramona-detail-img.webp";
+import  Ramona_7 from "@/assets/pngs/6th-Ramona-detail-img.webp";
+import  Ramona_8 from "@/assets/pngs/7th-Ramona-detail-img.webp";
+import  Lemon_1 from "@/assets/pngs/1st-yellow-teeth-detail.webp";
+import  Lemon_2 from "@/assets/pngs/2nd-yellow-teeth-detail.webp";
+import  Lemon_3 from "@/assets/pngs/3rd-yellow-teeth-detail.webp";
+import  Lemon_4 from "@/assets/pngs/4th-yellow-teeth-detail.webp";
+import  Lemon_5 from "@/assets/pngs/5th-yellow-teeth-detail.webp";
+import  Tomato_1 from "@/assets/pngs/1st-tomato-detail.webp";
+import  Tomato_2 from "@/assets/pngs/2nd-tomato-detail.webp";
+import  Tomato_3 from "@/assets/pngs/3rd-tomato-detail.webp";
+import  Tomato_4 from "@/assets/pngs/4th-tomato-detail.webp";
+import  Tomato_5 from "@/assets/pngs/5th-tomato-detail.webp";
+import  Tomato_6 from "@/assets/pngs/6th-tomato-detail.webp";
+export const Kidsproducts = [
+  {
+    id: "123-1",
+    title: "Betty The Beetroot",
+    price: 19.00,
+    image: sliderImg1,
+    tag: "70 %",
+    hoverImage: sliderHoverImg1,
+    colorOptions: [
+      {
+        name: "Red Beet",
+        images: [detail_small_01, detail_small_02, detail_small_11]
+      },
+      {
+        name: "Purple Beet",
+        images: [detail_small_03, detail_small_12, detail_small_09]
+      }
+    ]
+  },
+  {
+    id: "123-2",
+    title: "Carrot Mini Doudou-Teether",
+    price: 19.00,
+    image: Carrot_1,
+    tag: "70 %",
+    hoverImage: Carrot_2,
+    colorOptions: [
+      {
+        name: "Peach Beet",
+        images: [Carrot_1, Carrot_2, Carrot_3,Carrot_4,Carrot_5,Carrot_6,Carrot_7,Carrot_8,Ramona_8]
+      },
+      {
+        name: "greenish Beet",
+        images: [detail_small_03, Carrot_4 ]
+      }
+    ]
+  },
+  {
+    id: "123-3",
+    title: "Mini Doudou-Teether",
+    price: 15.50,
+    image: Ramona_1,
+    tag: "New",
+    hoverImage: Ramona_2,
+    colorOptions: [
+      {
+        name: "Radish Teether",
+        images: [Ramona_1, Ramona_2,Ramona_3,Ramona_4,Ramona_5,Ramona_6,Ramona_7]
+      },
+      {
+        name: "Yellow Teether",
+        images: [Lemon_1, Lemon_2, Lemon_3,Lemon_4,Lemon_5]
+      }
+    ]
+  },
+  {
+    id: "123-4",
+    title: "Rattle Toy",
+    price: 12.99,
+    image: Tomato_1,
+    hoverImage: Tomato_1,
+    colorOptions: [
+      {
+        name: "Tomato Rattle",
+        images: [Tomato_1, Tomato_2, Tomato_3,Tomato_4,Tomato_5,Tomato_6,]
+      },
+      {
+        name: "Mixed Rattle Toy",
+        images: [Tomato_2,Tomato_4,Tomato_5]
+      }
+    ]
+  },
+  {
+    id: "123-5",
+    title: "Carl The Cucumber",
+    price: 12.99,
+    image: sliderImg1,
+    hoverImage: sliderHoverImg1,
+    colorOptions: [
+      {
+        name: "Green Cucumber",
+        images: [detail_small_06, detail_small_07, detail_small_13]
+      },
+      {
+        name: "Dark Green Cucumber",
+        images: [detail_small_14, detail_small_17, detail_small_09]
+      }
+    ]
+  },
+  {
+    id: "123-6",
+    title: "Carl The Cucumber",
+    price: 12.99,
+    image: sliderImg1,
+    hoverImage: sliderHoverImg1,
+    colorOptions: [
+      {
+        name: "Green Cucumber",
+        images: [detail_small_06, detail_small_07, detail_small_13]
+      },
+      {
+        name: "Dark Green Cucumber",
+        images: [detail_small_14, detail_small_17, detail_small_09]
+      }
+    ]
+  }
+];

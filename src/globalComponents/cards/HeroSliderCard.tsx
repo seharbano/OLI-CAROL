@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import StarsRating from '../starsRating/StarsRating';
 import { useCart } from "@/utilis/CartContext";
 import Link from 'next/link';
 type props = {
+  id?: number;
   image: string | StaticImport;
   hoverImage: string | StaticImport;
   title: string;
@@ -13,8 +14,19 @@ type props = {
   tag?: string;
 };
 
-const HeroSliderCard = ({ image, hoverImage, title, price, tag, }: props) => {
+const HeroSliderCard = ({ image, hoverImage, title, price, tag,id }: props) => {
   const { addToCart } = useCart();
+  const [clientId, setClientId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!id) {
+      setClientId(Math.floor(1000 + Math.random() * 9000)); 
+    } else {
+      setClientId(id);
+    }
+  }, [id]);
+
+  if (!clientId) return null;
   return (
     <div className="w-[280px] m-4 group flex flex-col justify-center">
       <div className="relative w-[280px] h-[280px] overflow-hidden">
@@ -45,7 +57,7 @@ const HeroSliderCard = ({ image, hoverImage, title, price, tag, }: props) => {
           </button>
         </div>
       </div>
-      <Link href="./productDetail">
+      <Link href={`/product/${clientId}`}>
       <p className="mt-2 text-center sm:text-[15px] text-[13px]">{title}</p>
       </Link>
       <div className='mx-auto flex sm:text-[15px] text-[13px]'><StarsRating />(6)</div>
