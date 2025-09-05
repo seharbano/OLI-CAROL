@@ -235,7 +235,7 @@ export const shopMenus = [
   { label: "ALL PRODUCTS", path: "/all-products" },
   { label: "BABY GIFT SETS 🎁", path: "/baby-gift-sets" },
   { label: "Baby Teethers", path: "/baby-teethers" },
-  { label: "Mini Teethers for Newborns", path: "/mini-teethers" },
+  { label: "Mini Teethers for Newborns", path: "/mini-teethers",tag:"sale" },
   { label: "Rattle Toys", path: "/rattle-toys" },
   { label: "Mini Doudou Teethers", path: "/mini-doudou" },
   { label: "Baby Bath Toys", path: "/bath-toys" },

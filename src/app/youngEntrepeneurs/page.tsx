@@ -22,7 +22,7 @@ const YoungEntrepeneurs = () => {
         </div>
         <Image src={youngInterprizing} alt='' className='md:h-[90vh] h-auto sm:w-[50%] w-full' />
       </div>
-      <p className='lg:px-16 md:6 px-4 md:text-[15px] text-[12px] font-light my-12' >“Since the beginning of Oli&Carol, we wanted to act for the benefit of society. To do so, we are constantly transmitting important messages and taking actions to help our planet."</p>
+      <p className='lg:px-16 md:6 px-4 md:text-[15px] text-[12px] font-light my-12' >&quot;Since the beginning of Oli&Carol, we wanted to act for the benefit of society. To do so, we are constantly transmitting important messages and taking actions to help our planet.&quot;</p>
       <div className='lg:px-16 md:6 px-4 my-6'>
         <h2 className='  md:text-[35px]  text-[25px] font-urbane-rounded font-bold'>FROM BARCELONA TO THE WORLD</h2>
         <p className=' md:text-[15px] text-[12px] font-light'> Today we are present in +80 countries worldwide. Our goal is to keep expanding our categories and our international community & messages around the world. As well as to keep investigating to offer the coolest and most sustainable, innovative toys for babies. </p>

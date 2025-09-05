@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Link from "next/link";
-
 import { X } from "lucide-react";
 import { Plus, Minus } from "lucide-react";
 
@@ -11,8 +9,8 @@ type Props = {
 };
 
 const FilterSidebar: React.FC<Props> = ({ open, onClose }) => {
-  if (!open) return null;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  if (!open) return null;
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-import { ChevronDown, Funnel, X } from "lucide-react";
+import { ChevronDown, Funnel } from "lucide-react";
 import { fruitsCard } from "@/utilis/MockData";
 import GlobalButton from '@/globalComponents/buttons/GlobalButton';
 import HeroSliderCard from '@/globalComponents/cards/HeroSliderCard';
