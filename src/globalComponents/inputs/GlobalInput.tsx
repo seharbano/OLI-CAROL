@@ -5,7 +5,7 @@ type Props = {
   id?: string;
   value?: string;
   type?: string;
-  title: string; 
+  title: string;
   width?: string;
   height?: string;
   error?: string;
@@ -32,23 +32,23 @@ const GlobalInput = ({
         value={value}
         onChange={onChange}
         style={{ height }}
-        className={`peer w-full px-4 pt-3 pb-3 rounded-[10px] outline-none transition-all
-          ${error ? "border-red-500" : "border-[#dedede] border focus:border-[1.5px] focus:border-[#cf9f78]"}`}
-        placeholder=" " 
+        className={`peer w-full px-4 rounded-[10px] outline-none transition-all 
+          ${error ? "border-red-500 border" : "border-[#dedede] border focus:border-[1.5px] focus:border-[#cf9f78]"}`}
+        placeholder=" "
       />
-
-      <label
-        htmlFor={id}
-        className={`absolute left-4 transition-all duration-200 ease-in-out pointer-events-none
+      {!error &&
+        <label
+          htmlFor={id}
+          className={`absolute left-4 transition-all duration-200 ease-in-out pointer-events-none
           ${hasValue
-            ? "top-[1px] text-[12px] text-[#cf9f78] translate-y-0"  
-            : "top-1/2 -translate-y-1/2 text-[15px] text-gray-400"} 
+              ? "top-[1px] text-[12px] text-[#cf9f78] translate-y-0"
+              : "top-1/2 -translate-y-1/2 text-[15px] text-gray-400"} 
         `}
-      >
-        {title}
-      </label>
-
-      {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
+        >
+          {title}
+        </label>
+      }
+      {error && <p className="text-[11px] text-red-500 bottom- relative">{error}</p>}
     </div>
   );
 };
