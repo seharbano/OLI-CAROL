@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   title: "OLI&CAROL",
   description: "kids toys",
   icons: {
-    icon: "/duck.svg",
+    icon: "/duck-icon.png", 
+    shortcut: "/duck-icon.png",
+    apple: "/duck-icon.png",
   },
 };
 
@@ -16,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      
       <body className="font-century-gothic bg-white text-black" cz-shortcut-listen="true">
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
