@@ -1,13 +1,12 @@
 "use client"
 import { useCart } from "@/utilis/CartContext";
-import AddToCartCard from "../cards/AddToCartCard";
 import GlobalButton from "../buttons/GlobalButton";
 import { useRouter } from "next/navigation";
 import CartSummary from "../cards/CartSummary";
 
 const CartSidebar = () => {
   const router = useRouter();
-  const { cart, isCartOpen, toggleCart, removeFromCart, updateQty,subtotal,totalItems } = useCart();
+  const { isCartOpen, toggleCart,totalItems } = useCart();
 
   return (
     <div>

@@ -3,7 +3,7 @@ import React from "react";
 import { useCart } from "@/utilis/CartContext";
 import AddToCartCard from "../cards/AddToCartCard";
 type Props = {
-    className?: any;
+    className?: string;
 }
 const CartSummary = ({className}:Props) => {
   const { cart, subtotal, removeFromCart, updateQty } = useCart();
