@@ -1,34 +1,29 @@
 "use client";
-
+import { useSearchParams } from "next/navigation";
 import { useState, useMemo, useEffect } from "react";
 import { fruitsCard } from "@/utilis/MockData";
 
 export function useProducts() {
-  const [decodedAge, setDecodedAge] = useState<string | null>(null);
-  const [decodedCategory, setDecodedCategory] = useState<string | null>(null);
+  const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const age = params.get("age");
-      const category = params.get("category");
-
-      setDecodedAge(age ? decodeURIComponent(age).trim() : null);
-      setDecodedCategory(category ? decodeURIComponent(category).trim() : null);
-    }
-  }, []);
-
-  const filteredProducts = useMemo(() => {
-    return fruitsCard.filter((product) => {
-      if (decodedAge && product.age?.toLowerCase() !== decodedAge.toLowerCase()) return false;
-      if (decodedCategory && product.category?.toLowerCase() !== decodedCategory.toLowerCase()) return false;
-      return true;
-    });
-  }, [decodedAge, decodedCategory]);
+  // Query params read
+  const age = searchParams.get("age");
+  const category = searchParams.get("category");
 
   const [selected, setSelected] = useState("SORT BY");
+
+  // Filter products
+  const filteredProducts = useMemo(() => {
+    return fruitsCard.filter((product) => {
+      if (age && product.age?.toLowerCase() !== age.toLowerCase()) return false;
+      if (category && product.category?.toLowerCase() !== category.toLowerCase()) return false;
+      return true;
+    });
+  }, [age, category]);
+
   const [displayProducts, setDisplayProducts] = useState(filteredProducts);
 
+  // Jab bhi filteredProducts update ho, display update karo
   useEffect(() => {
     setDisplayProducts(filteredProducts);
   }, [filteredProducts]);
