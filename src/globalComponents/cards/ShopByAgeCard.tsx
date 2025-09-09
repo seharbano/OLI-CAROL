@@ -1,5 +1,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 type Props = {
   img: StaticImageData;
@@ -7,8 +8,12 @@ type Props = {
 };
 
 const ShopByAgeCard = ({ img, text }: Props) => {
+  const router = useRouter();
   return (
-    <div className="flex flex-col items-center text-center group cursor-pointer">
+    <div
+      onClick={() => router.push(`/productList?age=${encodeURIComponent(text)}`)}
+      className="flex flex-col items-center text-center group cursor-pointer"
+    >
       <div className="overflow-hidden">
         <Image
           src={img}

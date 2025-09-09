@@ -7,7 +7,7 @@ import HeroSliderCard from '@/globalComponents/cards/HeroSliderCard';
 import FilterSidebar from '@/globalComponents/sidebar/FilterSidebar';
 import { useProducts } from '@/utilis/useProducts';
 
-const ProductList = () => {
+const ProductListContent = () => {
   const { displayProducts, selected, handleSelect } = useProducts();
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -95,4 +95,4 @@ const ProductList = () => {
   )
 }
 
-export default ProductList;
+export default ProductListContent;

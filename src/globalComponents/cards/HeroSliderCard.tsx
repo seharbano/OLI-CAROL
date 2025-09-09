@@ -12,9 +12,11 @@ type props = {
   title: string;
   price: number;
   tag?: string;
+  age?: string;
+  category?: string; 
 };
 
-const HeroSliderCard = ({ image, hoverImage, title, price, tag,id }: props) => {
+const HeroSliderCard = ({ image, hoverImage, title, price, tag,id}: props) => {
   const { addToCart } = useCart();
  
   return (

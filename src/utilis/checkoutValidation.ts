@@ -70,7 +70,7 @@ export function useCheckoutForm(initialMethod: "card" | "paypal" | "cod" = "card
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      onSuccess(); // e.g. show modal
+      onSuccess(); 
     }
   };
 

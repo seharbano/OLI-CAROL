@@ -116,17 +116,17 @@ export const ageCards = [
   {
     id: 2,
     img: SixTwelve,
-    text: "6 - 12 months",
+    text: "6 months - 1 years",
   },
   {
     id: 3,
     img: TwelveEighteen,
-    text: "12 - 18 months",
+    text: "1 - 3 years",
   },
   {
     id: 4,
     img: EighteenTwentyFour,
-    text: "18 - 24 months",
+    text: "+3 years",
   },
 ];
 export const categoryCards = [
@@ -152,7 +152,22 @@ export const categoryCards = [
   },
 ];
 
-export const fruitsCard = [
+import { StaticImageData } from "next/image";
+
+export type Product = {
+  id: number;
+  price: number;
+  image: StaticImageData;
+  hoverImage: StaticImageData;
+  title: string;
+  discount?: string;
+  discountBol?: boolean;
+  tag?: string;
+  age?: string;     
+  category?: string; 
+};
+
+export const fruitsCard: Product[] = [
   {
     id: 1,
     price: 19.90,
@@ -161,6 +176,8 @@ export const fruitsCard = [
     discountBol:true,
     hoverImage: hoverRadish,
     title: "Ramona the Radish Baby Teether",
+       age: "0 - 6 months",
+    category: "Baby Teethers"
   },
   {
     id: 2,
@@ -168,6 +185,8 @@ export const fruitsCard = [
     image: carrotPlate,
     hoverImage: hoverCarrotPlate,
     title: "Cathy the Carrot Plate & Spoon set",
+       age: "0 - 6 months",
+    category: "cars"
   },
   {
     id: 3,
@@ -175,6 +194,7 @@ export const fruitsCard = [
     image: sliderImg1,
     hoverImage: sliderHoverImg1,
     title: "Wally the Watermelon Baby Teether",
+       age: "6 months - 1 years",
   },
   {
     id: 4,
@@ -185,6 +205,7 @@ export const fruitsCard = [
     tag: "SOLD OUT",
     hoverImage: hoverArtichoke,
     title: "Artichoke Rattle Toy",
+    category: "bath toys"
   },
   {
     id: 5,
@@ -192,6 +213,7 @@ export const fruitsCard = [
     image: carrot,
     hoverImage: hoverCarrot,
     title: "Cathy the Carrot Mini Doudou-Teether",
+       age: "0 - 6 months",
   },
   {
     id: 6,
@@ -199,6 +221,8 @@ export const fruitsCard = [
     image: apple,
     hoverImage: hoverApple,
     title: "Pepa The Apple Bowl & Spoon Set",
+       age: "0 - 6 months",
+    category: "Rattle toys"
   },
   {
     id: 7,
@@ -206,6 +230,8 @@ export const fruitsCard = [
     price: 39.90,
     hoverImage: hoverPack,
     title: "Newborn Gift Set 1 Mini Teether + 2 Teethers",
+       age: "+3 months",
+    category: "Baby Teethers"
   },
   {
     id: 8,
@@ -214,6 +240,7 @@ export const fruitsCard = [
     tag: "NEW",
     hoverImage: hoverCherry,
     title: "Cherry Stacking Toy & Rattle Ball",
+    age: "1 - 3 years",
   },
   {
     id: 9,
@@ -221,6 +248,7 @@ export const fruitsCard = [
     image: carrotbaby,
     hoverImage: hoverCarrotBaby,
     title: "Cathy The Carrot Baby Car Toy",
+    age: "1 - 3 years",
   },
   {
     id: 10,
@@ -228,6 +256,7 @@ export const fruitsCard = [
     image: watermelon,
     hoverImage: hoverWatermelon,
     title: "Wally The Watermelon Bowl & Spoon Set",
+       age: "1 - 3 years",
   },
 ];
 
