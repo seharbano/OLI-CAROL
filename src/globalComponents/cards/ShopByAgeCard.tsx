@@ -1,13 +1,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
+import { ShopByAgeCardProps } from "@/types/product";
 
-type Props = {
-  img: StaticImageData;
-  text: string;
-};
-
-const ShopByAgeCard = ({ img, text }: Props) => {
+const ShopByAgeCard = ({ img, text }: ShopByAgeCardProps) => {
   const router = useRouter();
   return (
     <div

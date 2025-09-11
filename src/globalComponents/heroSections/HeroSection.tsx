@@ -1,6 +1,7 @@
 import React from 'react';
 import heroimg from '@/assets/pngs/hero-img.webp'
 import Image from 'next/image';
+import Link from 'next/link';
 const HeroSection = () => {
   return (
     <div>
@@ -8,6 +9,7 @@ const HeroSection = () => {
         <Image src={heroimg} alt="" className=' md:h-[86vh] sm:h-[60vh] h-[350px]' />
         <div className="flex flex-col absolute top-0 items-center w-full justify-center md:h-[100vh] sm:h-[60vh] h-[350px] text-white">
           <h1 className="md:text-[35px] sm:text-[30px] text-[25px] font-bold text-black font-urbane-rounded">THE TABLE IS SET</h1>
+         <Link href="/tableSet">
           <p className="text-black md:text-[17px]  text-[15px] flex gap-2 items-center group cursor-pointer">
             Pre Access Now
             <span className="inline-block transform transition-transform duration-300 group-hover:translate-x-2 ">
@@ -28,6 +30,7 @@ const HeroSection = () => {
               </svg>
             </span>
           </p>
+          </Link>
         </div>
       </div>
     </div>

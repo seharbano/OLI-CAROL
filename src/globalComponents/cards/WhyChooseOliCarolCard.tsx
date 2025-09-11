@@ -1,14 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import {WhyChooseOliCarolCardProps} from "@/types/product"
 
-type Props = {
-  title: string;
-  description: string;
-  img: string | StaticImport;
-};
-
-const WhyChooseOliCarolCard = ({ title, description, img }: Props) => {
+const WhyChooseOliCarolCard = ({ title, description, img }: WhyChooseOliCarolCardProps) => {
   return (
     <div className=" flex flex-col gap-3">
       <Image src={img} alt={title}  />

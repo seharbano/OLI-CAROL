@@ -10,32 +10,21 @@ import { Menu, Search, X } from "lucide-react";
 import NavMenuSidebar from "./NavMenuSidebar";
 import Link from "next/link";
 import { useCart } from "@/utilis/CartContext";
-
+import { useNavbarHooks } from "@/hooks/useNavbarHook";
 const Navbar = () => {
-  const [isSearching, setIsSearching] = useState(false);
-  const [query, setQuery] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const { cart, isCartOpen, toggleCart } = useCart();
+  const {
+    isSearching,
+    setIsSearching,
+    query,
+    setQuery,
+    isMenuOpen,
+    setIsMenuOpen,
+    openDropdown,
+    handleMouseEnter,
+    handleMouseLeave,
+  } = useNavbarHooks();
+  
   const { totalItems, toggleCart } = useCart();
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = (menu: string) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setOpenDropdown(menu);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 250);
-  };
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
 
   return (
     <>
@@ -147,9 +136,6 @@ const Navbar = () => {
                     <Link href="/whyChooseOliCarol">
                     <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">Why Choose Oli&Carol</p>
                     </Link>
-                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">We are Green</p>
-                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]"> Save the Corals</p>
-                    <p className="block px-4 py-2 hover:bg-gray-100 hover:text-[#b89778]">LATEST NEWS BLOG</p>
                   </div>
                 )}
               </li>

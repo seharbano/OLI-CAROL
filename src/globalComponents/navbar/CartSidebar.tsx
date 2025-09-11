@@ -6,7 +6,7 @@ import CartSummary from "../cards/CartSummary";
 
 const CartSidebar = () => {
   const router = useRouter();
-  const { isCartOpen, toggleCart,totalItems } = useCart();
+  const { isCartOpen, toggleCart, totalItems } = useCart();
 
   return (
     <div>
@@ -20,7 +20,7 @@ const CartSidebar = () => {
         <CartSummary className="flex-1 overflow-y-auto py-4 max-h-[calc(100vh-320px)] h-[calc(100vh-320px)]" />
 
         <div className="border-t  border-t-gray-200">
-       
+
           <div className="p-4  border-b border-b-gray-200">
             <GlobalButton title="Checkout" className="bg-[#cf9f78] text-white rounded-[5px]" showIcon={true}
               icon={
@@ -28,7 +28,7 @@ const CartSidebar = () => {
                   <path fill="#fff" d="M12 4c1.648 0 3 1.352 3 3v3H9V7c0-1.648 1.352-3 3-3m5 6V7c0-2.752-2.248-5-5-5S7 4.248 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zM6 12h12v8H6z" />
                 </svg>
               }
-              disabled={totalItems === 0} 
+              disabled={totalItems === 0}
               onClick={() => {
                 // if (totalItems === 0) {
                 //   alert("Your cart is empty. Add some products before checkout.");
@@ -37,10 +37,10 @@ const CartSidebar = () => {
                 toggleCart(false);
                 router.push("/checkout");
               }}
-              // onClick={() => {
-              //   toggleCart(false); 
-              //   router.push("/checkout");
-              // }}
+            // onClick={() => {
+            //   toggleCart(false); 
+            //   router.push("/checkout");
+            // }}
             />
           </div>
           <div className="p-4 flex flex-col gap-3 ">

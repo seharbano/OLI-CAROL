@@ -163,8 +163,8 @@ export type Product = {
   discount?: string;
   discountBol?: boolean;
   tag?: string;
-  age?: string;     
-  category?: string; 
+  age?: string;
+  category?: string;
 };
 
 export const fruitsCard: Product[] = [
@@ -172,11 +172,11 @@ export const fruitsCard: Product[] = [
     id: 1,
     price: 19.90,
     image: radish,
-    discount:"70%",
-    discountBol:true,
+    discount: "70%",
+    discountBol: true,
     hoverImage: hoverRadish,
     title: "Ramona the Radish Baby Teether",
-       age: "0 - 6 months",
+    age: "0 - 6 months",
     category: "Baby Teethers"
   },
   {
@@ -185,7 +185,7 @@ export const fruitsCard: Product[] = [
     image: carrotPlate,
     hoverImage: hoverCarrotPlate,
     title: "Cathy the Carrot Plate & Spoon set",
-       age: "0 - 6 months",
+    age: "0 - 6 months",
     category: "cars"
   },
   {
@@ -194,14 +194,14 @@ export const fruitsCard: Product[] = [
     image: sliderImg1,
     hoverImage: sliderHoverImg1,
     title: "Wally the Watermelon Baby Teether",
-       age: "6 months - 1 years",
+    age: "6 months - 1 years",
   },
   {
     id: 4,
     price: 29.90,
-    discount:"sale",
+    discount: "sale",
     image: artichoke,
-    discountBol:true,
+    discountBol: true,
     tag: "SOLD OUT",
     hoverImage: hoverArtichoke,
     title: "Artichoke Rattle Toy",
@@ -213,7 +213,7 @@ export const fruitsCard: Product[] = [
     image: carrot,
     hoverImage: hoverCarrot,
     title: "Cathy the Carrot Mini Doudou-Teether",
-       age: "0 - 6 months",
+    age: "0 - 6 months",
   },
   {
     id: 6,
@@ -221,7 +221,7 @@ export const fruitsCard: Product[] = [
     image: apple,
     hoverImage: hoverApple,
     title: "Pepa The Apple Bowl & Spoon Set",
-       age: "0 - 6 months",
+    age: "0 - 6 months",
     category: "Rattle toys"
   },
   {
@@ -230,7 +230,7 @@ export const fruitsCard: Product[] = [
     price: 39.90,
     hoverImage: hoverPack,
     title: "Newborn Gift Set 1 Mini Teether + 2 Teethers",
-       age: "+3 months",
+    age: "+3 months",
     category: "Baby Teethers"
   },
   {
@@ -256,15 +256,15 @@ export const fruitsCard: Product[] = [
     image: watermelon,
     hoverImage: hoverWatermelon,
     title: "Wally The Watermelon Bowl & Spoon Set",
-       age: "1 - 3 years",
+    age: "1 - 3 years",
   },
 ];
 
 export const shopMenus = [
-  { label: "ALL PRODUCTS", path: "/all-products" },
+  { label: "ALL PRODUCTS", path: "/productList" },
   { label: "BABY GIFT SETS 🎁", path: "/baby-gift-sets" },
   { label: "Baby Teethers", path: "/baby-teethers" },
-  { label: "Mini Teethers for Newborns", path: "/mini-teethers",tag:"sale" },
+  { label: "Mini Teethers for Newborns", path: "/mini-teethers", tag: "sale" },
   { label: "Rattle Toys", path: "/rattle-toys" },
   { label: "Mini Doudou Teethers", path: "/mini-doudou" },
   { label: "Baby Bath Toys", path: "/bath-toys" },
@@ -276,11 +276,8 @@ export const shopMenus = [
 ];
 
 export const moreThanToysMenus = [
-  { label: "Young Entrepeneurs", path: "/young-entrepeneurs" },
-  { label: "Why Choose Oli&Carol", path: "/why-choose" },
-  { label: "We are Green", path: "/we-are-green" },
-  { label: "Save the Corals", path: "/save-the-corals" },
-  { label: "LATEST NEWS BLOG", path: "/blog" },
+  { label: "Young Entrepeneurs", path: "/youngEntrepeneurs" },
+  { label: "Why Choose Oli&Carol", path: "/whyChooseOliCarol" },
 ];
 
 
@@ -413,7 +410,7 @@ export const whyChooseOliCarolData = [
     id: 2,
     title: "Handcrafted with Love",
     description: "Each product is uniquely handcrafted by artisans, making every piece special.",
-    img:chooseCardtwo
+    img: chooseCardtwo
   },
   {
     id: 3,
@@ -431,7 +428,7 @@ export const whyChooseOliCarolData = [
     id: 5,
     title: "Handcrafted with Love",
     description: "Each product is uniquely handcrafted by artisans, making every piece special.",
-    img:chooseCardfive
+    img: chooseCardfive
   },
   {
     id: 6,
@@ -451,25 +448,25 @@ import Carrot_5 from "@/assets/pngs/5th-carrot-detail-img.webp";
 import Carrot_6 from "@/assets/pngs/6th-carrot-detail-img.webp";
 import Carrot_7 from "@/assets/pngs/7nth-carrot-detail-img.webp";
 import Carrot_8 from "@/assets/pngs/8th-carrot-detail-img.webp";
-import  Ramona_1 from "@/assets/pngs/1st-Ramona-detail-img.webp";
-import  Ramona_2 from "@/assets/pngs/2nd-Ramona-detail-img.webp";
-import  Ramona_3 from "@/assets/pngs/3rd-Ramona-detail-img.webp";
-import  Ramona_4 from "@/assets/pngs/4rth-Ramona-detail-img.webp";
-import  Ramona_5 from "@/assets/pngs/5th-Ramona-detail-img.webp";
-import  Ramona_6 from "@/assets/pngs/6th-Ramona-detail-img.webp";
-import  Ramona_7 from "@/assets/pngs/6th-Ramona-detail-img.webp";
-import  Ramona_8 from "@/assets/pngs/7th-Ramona-detail-img.webp";
-import  Lemon_1 from "@/assets/pngs/1st-yellow-teeth-detail.webp";
-import  Lemon_2 from "@/assets/pngs/2nd-yellow-teeth-detail.webp";
-import  Lemon_3 from "@/assets/pngs/3rd-yellow-teeth-detail.webp";
-import  Lemon_4 from "@/assets/pngs/4th-yellow-teeth-detail.webp";
-import  Lemon_5 from "@/assets/pngs/5th-yellow-teeth-detail.webp";
-import  Tomato_1 from "@/assets/pngs/1st-tomato-detail.webp";
-import  Tomato_2 from "@/assets/pngs/2nd-tomato-detail.webp";
-import  Tomato_3 from "@/assets/pngs/3rd-tomato-detail.webp";
-import  Tomato_4 from "@/assets/pngs/4th-tomato-detail.webp";
-import  Tomato_5 from "@/assets/pngs/5th-tomato-detail.webp";
-import  Tomato_6 from "@/assets/pngs/6th-tomato-detail.webp";
+import Ramona_1 from "@/assets/pngs/1st-Ramona-detail-img.webp";
+import Ramona_2 from "@/assets/pngs/2nd-Ramona-detail-img.webp";
+import Ramona_3 from "@/assets/pngs/3rd-Ramona-detail-img.webp";
+import Ramona_4 from "@/assets/pngs/4rth-Ramona-detail-img.webp";
+import Ramona_5 from "@/assets/pngs/5th-Ramona-detail-img.webp";
+import Ramona_6 from "@/assets/pngs/6th-Ramona-detail-img.webp";
+import Ramona_7 from "@/assets/pngs/6th-Ramona-detail-img.webp";
+import Ramona_8 from "@/assets/pngs/7th-Ramona-detail-img.webp";
+import Lemon_1 from "@/assets/pngs/1st-yellow-teeth-detail.webp";
+import Lemon_2 from "@/assets/pngs/2nd-yellow-teeth-detail.webp";
+import Lemon_3 from "@/assets/pngs/3rd-yellow-teeth-detail.webp";
+import Lemon_4 from "@/assets/pngs/4th-yellow-teeth-detail.webp";
+import Lemon_5 from "@/assets/pngs/5th-yellow-teeth-detail.webp";
+import Tomato_1 from "@/assets/pngs/1st-tomato-detail.webp";
+import Tomato_2 from "@/assets/pngs/2nd-tomato-detail.webp";
+import Tomato_3 from "@/assets/pngs/3rd-tomato-detail.webp";
+import Tomato_4 from "@/assets/pngs/4th-tomato-detail.webp";
+import Tomato_5 from "@/assets/pngs/5th-tomato-detail.webp";
+import Tomato_6 from "@/assets/pngs/6th-tomato-detail.webp";
 
 export const Kidsproducts = [
   {
@@ -500,11 +497,11 @@ export const Kidsproducts = [
     colorOptions: [
       {
         name: "Peach Beet",
-        images: [Carrot_1, Carrot_2, Carrot_3,Carrot_4,Carrot_5,Carrot_6,Carrot_7,Carrot_8,Ramona_8]
+        images: [Carrot_1, Carrot_2, Carrot_3, Carrot_4, Carrot_5, Carrot_6, Carrot_7, Carrot_8, Ramona_8]
       },
       {
         name: "greenish Beet",
-        images: [detail_small_03, Carrot_4 ]
+        images: [detail_small_03, Carrot_4]
       }
     ]
   },
@@ -518,11 +515,11 @@ export const Kidsproducts = [
     colorOptions: [
       {
         name: "Radish Teether",
-        images: [Ramona_1, Ramona_2,Ramona_3,Ramona_4,Ramona_5,Ramona_6,Ramona_7]
+        images: [Ramona_1, Ramona_2, Ramona_3, Ramona_4, Ramona_5, Ramona_6, Ramona_7]
       },
       {
         name: "Yellow Teether",
-        images: [Lemon_1, Lemon_2, Lemon_3,Lemon_4,Lemon_5]
+        images: [Lemon_1, Lemon_2, Lemon_3, Lemon_4, Lemon_5]
       }
     ]
   },
@@ -535,11 +532,11 @@ export const Kidsproducts = [
     colorOptions: [
       {
         name: "Tomato Rattle",
-        images: [Tomato_1, Tomato_2, Tomato_3,Tomato_4,Tomato_5,Tomato_6,]
+        images: [Tomato_1, Tomato_2, Tomato_3, Tomato_4, Tomato_5, Tomato_6,]
       },
       {
         name: "Mixed Rattle Toy",
-        images: [Tomato_2,Tomato_4,Tomato_5]
+        images: [Tomato_2, Tomato_4, Tomato_5]
       }
     ]
   },
@@ -580,3 +577,110 @@ export const Kidsproducts = [
 ];
 
 
+
+
+import { Slide } from "@/types/product";
+
+export const slides: Slide[] = [
+  {
+    title: "I WAS ONCE A TREE",
+    description:
+      "Made from nature, by human hands for babies’ hands. No synthetic materials.",
+  },
+  {
+    title: "SAFE FOR BABIES",
+    description:
+      "Each toy is carefully crafted to be safe, durable, and eco-friendly.",
+  },
+  {
+    title: "INSPIRED BY NATURE",
+    description:
+      "Our designs come from the beauty of plants, trees, and life itself.",
+  },
+];
+
+export const options = [
+  "Featured",
+  "Best selling",
+  "Alphabetically, A-Z",
+  "Alphabetically, A-Z",
+  "Price, low to high",
+  "Price, high to low",
+  "Date, old to new",
+  "Date, new to old"
+];
+
+
+export const features = [
+  {
+    icon: "https://oliandcarol.com/cdn/shop/files/STAMPS_Mesa_de_trabajo_1_copia_2.png?v=1709212743&width=100",
+    text: "Develop fine & gross motor skills",
+  },
+  {
+    icon: "https://oliandcarol.com/cdn/shop/files/Hand_Made.png?v=1686922853&width=100",
+    text: "No plastic or silicone: Mix of natural rubber & fsc wood",
+  },
+  {
+    icon: "https://oliandcarol.com/cdn/shop/files/STAMPS_Mesa_de_trabajo_1_copia_2.png?v=1709212743&width=100",
+    text: "Handcrafted one by one & hand painted with natural pigments",
+  },
+  {
+    icon: "https://oliandcarol.com/cdn/shop/files/STAMPS_Mesa_de_trabajo_1_copia_2.png?v=1709212743&width=100",
+    text: "Biodegradable toys: generating the least possible carbon footprint & waste in the planet",
+  },
+  {
+    icon: "https://oliandcarol.com/cdn/shop/files/STAMPS_Mesa_de_trabajo_1_copia_2.png?v=1709212743&width=100",
+    text: "Solidary toys: we contribute with causes for the planet & the people",
+  },
+];
+
+export const tabsProductDetail =  [
+  {
+    label: "DESCRIPTION",
+    content: (
+      <>
+        <p>
+          Introducing Betty, the sustainable baby car toy! A beetroot-inspired
+          design handcrafted with natural rubber & FSC wood. This baby car
+          promotes interactive play, cognitive development and social skills.
+          It&apos;s packaging has a drop-down ramp inside making it reusable &
+          fun to play with!
+        </p>
+        <p className="mt-2">
+          Perfect for ages +0 & up to 4 years old, baby car toys are the ultimate
+          playtime choice for eco-conscious parents and young kiddos. Because
+          cool toys can also care for the planet and build lifelong habits.
+        </p>
+      </>
+    ),
+  },
+  {
+    label: "WASHING & CARE",
+    content: (
+      <p>
+        To clean, simply wipe your toy with a damp cloth and mild soap. Do not
+        sterilize, boil, or place in the dishwasher. Store in a dry place away
+        from direct sunlight.
+      </p>
+    ),
+  },
+  {
+    label: "CERTIFICATES",
+    content: (
+      <p>
+        All Oli&Carol products meet international safety standards including
+        EN71, ASTM, and CE certifications. They are tested for non-toxic,
+        eco-friendly materials.
+      </p>
+    ),
+  },
+  {
+    label: "SHIPPING RATES",
+    content: (
+      <p>
+        Free shipping on orders above €50. Standard delivery within 3-5 business
+        days. International shipping rates may vary depending on destination.
+      </p>
+    ),
+  },
+];

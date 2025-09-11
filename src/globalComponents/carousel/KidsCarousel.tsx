@@ -71,6 +71,7 @@ const KidsCarousel = () => {
             image={product.image}
             hoverImage={product.hoverImage}
             tag={product.tag}
+            className="max-[600px]:w-[200px] max-[600px]:h-[260px]"
           />
         ))}
       </div>

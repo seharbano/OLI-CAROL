@@ -1,24 +1,20 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 
 import { ChevronDown, Funnel } from "lucide-react";
 import GlobalButton from '@/globalComponents/buttons/GlobalButton';
 import HeroSliderCard from '@/globalComponents/cards/HeroSliderCard';
 import FilterSidebar from '@/globalComponents/sidebar/FilterSidebar';
 import { useProducts } from '@/utilis/useProducts';
+import { useDropdown, useSidebar } from '@/hooks/useUIStates';
+import {options} from "@/utilis/MockData";
 
 const ProductListContent = () => {
+
   const { displayProducts, selected, handleSelect } = useProducts();
-  const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  // const [selected, setSelected] = useState("SORT BY");
+  const { open, setOpen } = useSidebar();
+  const { isOpen, setIsOpen } = useDropdown();
 
-  const options = ["Featured", "Best selling", "Alphabetically, A-Z", "Alphabetically, A-Z", "Price, low to high", "Price, high to low", "Date, old to new", "Date, new to old"];
-
-  // const handleSelect = (option: string) => {
-  //   setSelected(option);
-  //   setIsOpen(false);
-  // };
   return (
     <div className='py-4 max-[500px]:py-2'>
       <div className='flex flex-col items-center gap-2 px-16 max-[1024px]:px-10 max-[768px]:px-5'>
@@ -75,7 +71,7 @@ const ProductListContent = () => {
         </div>
       </div>
       <div>
-        <div className="grid grid-cols-4 gap-4 px-16 max-[1024px]:px-10 max-[768px]:px-5">
+        <div className="grid grid-cols-4 max-[1230px]:grid-cols-3 max-[700px]:grid-cols-2 max-[400px]:grid-cols-1 gap-4 px-16 max-[1024px]:px-10 max-[768px]:px-5">
           {displayProducts.map((card) => (
             <HeroSliderCard
               key={card.id}
@@ -87,6 +83,7 @@ const ProductListContent = () => {
               id={String(card.id)}
               age={card.age}
               category={card.category}
+            className='w-[280px] max-[990px]:w-[95%] max-[950px]:h-[320px] max-[500px]:h-[260px] max-[400px]:h-[400px]'
             />
           ))}
         </div>

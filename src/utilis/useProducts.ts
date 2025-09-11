@@ -15,7 +15,7 @@ export function useProducts() {
   // Filter products
   const filteredProducts = useMemo(() => {
     return fruitsCard.filter((product) => {
-      if (age && product.age?.toLowerCase() !== age.toLowerCase()) return false;
+      if (age && !product.age?.toLowerCase().includes(age.toLowerCase())) return false;
       if (category && product.category?.toLowerCase() !== category.toLowerCase()) return false;
       return true;
     });

@@ -5,23 +5,14 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import StarsRating from '../starsRating/StarsRating';
 import { useCart } from "@/utilis/CartContext";
 import Link from 'next/link';
-type props = {
-  id?: string;
-  image: string | StaticImport;
-  hoverImage: string | StaticImport;
-  title: string;
-  price: number;
-  tag?: string;
-  age?: string;
-  category?: string; 
-};
+import { HeroSliderCardProps } from "@/types/product";
 
-const HeroSliderCard = ({ image, hoverImage, title, price, tag,id}: props) => {
+const HeroSliderCard = ({ image, hoverImage, title, price, tag,id,className}:HeroSliderCardProps) => {
   const { addToCart } = useCart();
  
   return (
-    <div className="w-[280px] m-4 group flex flex-col justify-center">
-      <div className="relative w-[280px] h-[280px] overflow-hidden">
+    <div className={`w-[280px] ${className} m-4 group flex flex-col justify-center`}>
+      <div className={`relative  ${className}  w-[280px] h-[280px] overflow-hidden`}>
         <Image
           src={image}
           alt={title}
@@ -43,14 +34,14 @@ const HeroSliderCard = ({ image, hoverImage, title, price, tag,id}: props) => {
           group-hover:bottom-0 group-hover:opacity-100"
         >
           <button
-         onClick={() => addToCart({ id: title, title, price, image })}
+         onClick={() => addToCart({ id, title, price, image })}
           className='bg-white/30 backdrop-blur-sm w-[100%] h-[47px] font-[600] text-[15px] rounded-0 text-black'>
             add to cart
           </button>
         </div>
       </div>
       <Link href={`/product/${id}`}>
-      <p className="mt-2 text-center sm:text-[15px] text-[13px]">{title}</p>
+      <p className="mt-2 text-center sm:text-[15px] text-[13px] truncate">{title}</p>
       </Link>
       <div className='mx-auto flex sm:text-[15px] text-[13px]'><StarsRating />(6)</div>
       <p className="text-center sm:text-[15px] text-[13px]">€{price}</p>

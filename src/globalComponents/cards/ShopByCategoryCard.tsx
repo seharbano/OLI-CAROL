@@ -1,13 +1,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
+import {ShopByCategoryCardProps} from "@/types/product";
 
-type Props = {
-  img: StaticImageData;
-  text: string;
-};
-
-const ShopByCategoryCard = ({ img, text }: Props) => {
+const ShopByCategoryCard = ({ img, text }: ShopByCategoryCardProps) => {
   const router = useRouter();
   return (
     <div className="flex flex-col items-center text-center group cursor-pointer" 

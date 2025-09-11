@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 
 import { Kidsproducts } from "@/utilis/MockData";
 import GlobalButton from "@/globalComponents/buttons/GlobalButton";
@@ -11,63 +10,25 @@ import KidsCarousel from "@/globalComponents/carousel/KidsCarousel";
 import ProductDetailCard from "@/globalComponents/cards/ProductDetailCard";
 import { useParams } from "next/navigation";
 import { useCart } from "@/utilis/CartContext";
-export type ProductDetailColor = {
-  name: string;
-  images: StaticImageData[];
-};
+import {Product} from "@/types/product";
+import {useProductDetail} from "@/hooks/useProductDetail";
 
 const ProductDetail = () => {
-//   const { id } = useParams();
-//   console.log(id);
-  
-//   const product = Kidsproducts.find((p) => String(p.id) === id);
- 
-// if (!product) {
-//   return <p>Product not found</p>;
-// }
+  const { id } = useParams();
+  const { addToCart } = useCart();
 
-// if (!product.colorOptions || product.colorOptions.length === 0) {
-//   return <p>No color options available</p>;
-// }
-// const [selectedColor, setSelectedColor] = useState(product.colorOptions[0]);
-//   const [bigImage, setBigImage] = useState(product.colorOptions[0].images[0]);
-//   const { addToCart } = useCart();
+  const product: Product | undefined = Kidsproducts.find(
+    (p) => p.id.toString() === id
+  );
 
-//   const handleColorChange = (color: ProductDetailColor) => {
-//     setSelectedColor(color);
-//     setBigImage(color.images[0]);
-//   };
+  const productDetail = useProductDetail(product);
 
+  if (!product) {
+    return <p className="p-6 text-red-500">Product not found</p>;
+  }
 
+  const { selectedColor, bigImage, handleColorChange, setBigImage } = productDetail;
 
-
-
-const { id } = useParams();
-console.log(id);
-
-const product = Kidsproducts.find((p) => String(p.id) === id);
-
-// ✅ types specify kiye
-const [selectedColor, setSelectedColor] = useState<ProductDetailColor | null>(
-  product?.colorOptions?.[0] ?? null
-);
-const [bigImage, setBigImage] = useState<StaticImageData | null>(
-  product?.colorOptions?.[0]?.images?.[0] ?? null
-);
-const { addToCart } = useCart();
-
-if (!product) {
-  return <p>Product not found</p>;
-}
-
-if (!product.colorOptions || product.colorOptions.length === 0) {
-  return <p>No color options available</p>;
-}
-
-const handleColorChange = (color: ProductDetailColor) => {
-  setSelectedColor(color);
-  setBigImage(color.images[0]);
-};
 
   return (
     <>
@@ -137,7 +98,7 @@ const handleColorChange = (color: ProductDetailColor) => {
             font="300"
             onClick={() =>
               addToCart({
-                id: product.id,
+                id:product.id,
                 title: product.title,
                 price: product.price,
                 image: bigImage!,

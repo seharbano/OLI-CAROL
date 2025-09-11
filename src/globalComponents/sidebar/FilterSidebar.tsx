@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { Plus, Minus } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useProductFilters } from "@/hooks/useProductFilters";
 
 type Props = {
   open: boolean;
@@ -10,26 +11,8 @@ type Props = {
 };
 
 const FilterSidebar: React.FC<Props> = ({ open, onClose }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [searchParams, setSearchParams] = useState<URLSearchParams | null>(null);
-  const router = useRouter();
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setSearchParams(new URLSearchParams(window.location.search));
-    }
-  }, []);
+  const { openIndex, toggleAccordion, handleFilterClick } = useProductFilters(open);
   if (!open) return null;
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const handleFilterClick = (type: "age" | "category", value: string) => {
-    const params = searchParams ? new URLSearchParams(searchParams.toString()) : new URLSearchParams();
-    params.set(type, value);
-
-    window.location.href = `/productList?${params.toString()}`;
-  };
   return (
     <>
       {/* Overlay - click karne se sidebar band */}

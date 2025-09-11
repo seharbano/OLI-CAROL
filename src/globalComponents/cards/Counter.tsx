@@ -1,13 +1,7 @@
 "use client";
 import React from "react";
-
-type Props = {
-  count: number;                 // current quantity
-  onIncrement: () => void;       // function to increase
-  onDecrement: () => void;       // function to decrease
-};
-
-const Counter = ({ count, onIncrement, onDecrement }: Props) => {
+import {CounterProps} from "@/types/product"
+const Counter = ({ count, onIncrement, onDecrement }: CounterProps) => {
   return (
     <div className="flex items-center justify-between border border-gray-300 gap-2 h-[38px] rounded-[5px] w-[86px]">
       {/* Minus Button */}
