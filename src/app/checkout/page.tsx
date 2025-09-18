@@ -4,13 +4,23 @@ import GlobalInput from "@/globalComponents/inputs/GlobalInput";
 import { useCart } from "@/utilis/CartContext";
 import CartSummary from "@/globalComponents/cards/CartSummary";
 import GlobalButton from "@/globalComponents/buttons/GlobalButton";
-import { useCheckoutForm } from "@/utilis/checkoutValidation";
+import GlobalModal from "@/globalComponents/modal/GlobalModal";
+import OrderCompletedModal from "@/globalComponents/modal/OrderCompletedModal";
+import { useOrder } from "@/hooks/useOrder";
 
 const CheckoutPage = () => {
   const { subtotal, discount, shipping, total, applyCoupon } = useCart();
   const [coupon, setCoupon] = useState("");
-  const { formData, errors, handleChange, handlePaymentChange, handleSubmit } =
-    useCheckoutForm("card");
+  const {
+    formData,
+    errors,
+    handleChange,
+    handlePaymentChange,
+    handleOrderCompleted,
+    loading,
+    isModalOpen,
+    closeModal,
+  } = useOrder();
 
   const handleApplyCoupon = () => {
     applyCoupon(coupon.trim());
@@ -24,8 +34,8 @@ const CheckoutPage = () => {
           {/* Contact Info */}
           <GlobalInput
             id="email"
-            title="Email"
             type="email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
             error={errors.email}
@@ -37,14 +47,14 @@ const CheckoutPage = () => {
             <div className="flex gap-3 max-[425px]:flex-col">
               <GlobalInput
                 id="firstName"
-                title="First Name"
+                placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}
                 error={errors.firstName}
               />
               <GlobalInput
                 id="lastName"
-                title="Last Name"
+                placeholder="Last Name"
                 value={formData.lastName}
                 onChange={handleChange}
                 error={errors.lastName}
@@ -52,21 +62,21 @@ const CheckoutPage = () => {
             </div>
             <GlobalInput
               id="address"
-              title="Address"
+              placeholder="Address"
               value={formData.address}
               onChange={handleChange}
               error={errors.address}
             />
             <GlobalInput
               id="city"
-              title="City"
+              placeholder="City"
               value={formData.city}
               onChange={handleChange}
               error={errors.city}
             />
             <GlobalInput
               id="phone"
-              title="Phone"
+              placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
               error={errors.phone}
@@ -113,7 +123,7 @@ const CheckoutPage = () => {
               <div className="space-y-3 mt-3">
                 <GlobalInput
                   id="cardNumber"
-                  title="Card Number"
+                  placeholder="Card Number"
                   value={formData.cardNumber}
                   onChange={handleChange}
                   error={errors.cardNumber}
@@ -121,14 +131,14 @@ const CheckoutPage = () => {
                 <div className="flex max-[425px]:flex-col gap-3">
                   <GlobalInput
                     id="expiry"
-                    title="Expiration date (MM / YY)"
+                    placeholder="Expiration date (MM / YY)"
                     value={formData.expiry}
                     onChange={handleChange}
                     error={errors.expiry}
                   />
                   <GlobalInput
                     id="cvc"
-                    title="Security code"
+                    placeholder="Security code"
                     value={formData.cvc}
                     onChange={handleChange}
                     error={errors.cvc}
@@ -136,7 +146,7 @@ const CheckoutPage = () => {
                 </div>
                 <GlobalInput
                   id="cardName"
-                  title="Name on Card"
+                  placeholder="Name on Card"
                   value={formData.cardName}
                   onChange={handleChange}
                   error={errors.cardName}
@@ -147,9 +157,10 @@ const CheckoutPage = () => {
 
           {/* Submit */}
           <GlobalButton
-            title="Order Completed"
+            title={loading ? "Processing..." : "Order Completed"}
             className="bg-[#cf9f78] rounded-md w-full"
-            onClick={() => handleSubmit(() => alert("🎉 Order Completed Successfully!"))}
+            onClick={handleOrderCompleted}
+            disabled={loading}
           />
         </div>
 
@@ -159,7 +170,7 @@ const CheckoutPage = () => {
           <div className="flex gap-2">
             <GlobalInput
               id="discount"
-              title="Discount code"
+              placeholder="Discount code"
               value={coupon}
               onChange={(e) => setCoupon(e.target.value)}
             />
@@ -175,6 +186,9 @@ const CheckoutPage = () => {
           <div className="flex justify-between font-bold text-lg"><span>Total</span><span>€{total.toFixed(2)}</span></div>
         </div>
       </main>
+      <GlobalModal isOpen={isModalOpen} onClose={closeModal} modalHeader={false}  >
+        <OrderCompletedModal />
+      </GlobalModal>
     </div>
   );
 };

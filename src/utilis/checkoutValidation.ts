@@ -16,7 +16,7 @@ export type CheckoutFormData = {
 
 export type ValidationErrors = Partial<Record<keyof CheckoutFormData, string>>;
 
-// ✅ validation logic
+// 🔎 validation logic
 function validateCheckoutForm(data: CheckoutFormData): ValidationErrors {
   const errors: ValidationErrors = {};
 
@@ -38,8 +38,8 @@ function validateCheckoutForm(data: CheckoutFormData): ValidationErrors {
   return errors;
 }
 
-// ✅ custom hook for checkout form
-export function useCheckoutForm(initialMethod: "card" | "paypal" | "cod" = "card") {
+// ✅ custom hook
+export function useCheckoutForm(initialMethod: CheckoutFormData["paymentMethod"] = "card") {
   const [formData, setFormData] = useState<CheckoutFormData>({
     email: "",
     firstName: "",
@@ -48,7 +48,12 @@ export function useCheckoutForm(initialMethod: "card" | "paypal" | "cod" = "card
     city: "",
     phone: "",
     paymentMethod: initialMethod,
+    cardNumber: "",
+    expiry: "",    
+    cvc: "",
+    cardName: "", 
   });
+
   const [errors, setErrors] = useState<ValidationErrors>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,19 +63,19 @@ export function useCheckoutForm(initialMethod: "card" | "paypal" | "cod" = "card
     }));
   };
 
-  const handlePaymentChange = (method: "card" | "paypal" | "cod") => {
+  const handlePaymentChange = (method: CheckoutFormData["paymentMethod"]) => {
     setFormData((prev) => ({
       ...prev,
       paymentMethod: method,
     }));
   };
 
-  const handleSubmit = (onSuccess: () => void) => {
+  const handleSubmit = async (onSuccess: () => void | Promise<void>) => {
     const validationErrors = validateCheckoutForm(formData);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      onSuccess(); 
+      await onSuccess(); // ✅ ab async bhi handle hoga
     }
   };
 
