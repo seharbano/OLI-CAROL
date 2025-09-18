@@ -22,7 +22,7 @@ const AuthenticationCode = () => {
         <div className='w-full'>
           <GlobalInput
             id="6-digit code"
-            title="6-digit code"
+            placeholder="6-digit code"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             width="100%"

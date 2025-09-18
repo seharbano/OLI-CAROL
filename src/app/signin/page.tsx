@@ -30,7 +30,7 @@ const Signin = () => {
         <div className='w-full'>
           <GlobalInput
             id="email"
-            title="Email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             width="100%"

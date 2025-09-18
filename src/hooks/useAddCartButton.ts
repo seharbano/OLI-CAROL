@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useCart } from "@/utilis/CartContext";
+import { StaticImageData } from "next/image";
 
 export function useAddToCart() {
   const { addToCart } = useCart();
@@ -10,7 +11,7 @@ export function useAddToCart() {
     id: string | number;
     title: string;
     price: number;
-    image: any;
+    image: string | StaticImageData;
   }) => {
     setLoading(true);
 

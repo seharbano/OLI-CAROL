@@ -9,7 +9,7 @@ type Props = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  children: any;
+  children:  React.ReactNode;
   modalHeader?: boolean;
   className?: string;
   overlayStyle?: React.CSSProperties;
